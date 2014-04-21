@@ -1,0 +1,93 @@
+body {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-color: #eee;
+}
+
+.form-login {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-login .form-login-heading,.form-login .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-login .checkbox {
+	font-weight: normal;
+	color: #fff;
+	text-shadow: 1px 1px 2px #7d552d
+}
+
+.form-login .form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.form-login .form-control:focus {
+	z-index: 2;
+}
+
+.form-login input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form-login input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.form-signup {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.form-signup .form-control {
+	position: relative;
+	font-size: 16px;
+	height: auto;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.form-signup .form-control:focus {
+	z-index: 2;
+}
+
+.form-signup input[name="user.username"] {
+	margin-bottom: -1px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form-signup input[name="user.password"] {
+	margin-bottom: -1px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form-signup input[name="user.repassword"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+
+.nav {
+	font-size: 20px;
+}

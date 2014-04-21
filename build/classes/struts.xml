@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+
+	<package name="gpms" namespace="/" extends="struts-default">
+		<default-action-ref name="index" />
+		<action name="index">
+			<result>
+				index.jsp
+			</result>
+		</action>
+		<action name="login">
+			<result>
+				login.jsp
+			</result>
+		</action>
+
+		<action name="logout" class="com.find1x.gpms.action.LogoutAction">
+			<result type="redirect">
+				/
+			</result>
+		</action>
+		<action name="Login" class="com.find1x.gpms.action.LoginAction">
+			<result type="redirect">
+				/
+			</result>
+			<result name="error" type="redirect">
+				login.jsp
+			</result>
+		</action>
+		
+	</package>
+</struts>
