@@ -23,6 +23,7 @@ public class LogoutAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		session.removeAttribute("username");
+		session.removeAttribute("type");
 		return SUCCESS;
 	}
 

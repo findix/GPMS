@@ -7,13 +7,13 @@
 <meta http-equiv="Expires" content="0">
 <meta http-equiv="kiben" content="no-cache">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>毕业设计管理</title>
+<title>毕业设计管理系统</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <%
 	// stylesheet
 %>
-<link href="css/dianfan.css" rel="stylesheet" media="screen">
+<link href="css/main.css" rel="stylesheet" media="screen">
 <link href="css/login.css" rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 <%
@@ -39,7 +39,12 @@
 	%>
 	<!-- nav -->
 	<%@ include file="nav.jsp"%>
-	
+	<%
+		//如果已经登录则自动跳转到首页
+		if (request.getSession().getAttribute("username") != null) {
+			response.sendRedirect("/gpms/");
+		}
+	%>
 
 	<div class="container" align="center">
 		<%

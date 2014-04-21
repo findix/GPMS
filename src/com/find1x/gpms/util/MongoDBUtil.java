@@ -26,12 +26,14 @@ public class MongoDBUtil{
 		User user=new User();
 		user.setUsername(dBObject.get("username").toString());
 		user.setPassword(dBObject.get("password").toString());
+		user.setType(Integer.parseInt(dBObject.get("type").toString()));
 		return user;
 	}
 	public static DBObject convertUser2DBObject(User user){
 		DBObject dBObject =new BasicDBObject();
 		dBObject.put("username", user.getUsername());
 		dBObject.put("password", user.getPassword());
+		dBObject.put("type", user.getType());
 		return dBObject;
 	}
 }

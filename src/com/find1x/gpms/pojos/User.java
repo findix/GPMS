@@ -4,6 +4,7 @@ public class User {
 	private int _id;
 	private String username;
 	private String password;
+	private int type;
 	
 	public int get_id() {
 		return _id;
@@ -22,6 +23,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public int getType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
 	}
 	
 }
