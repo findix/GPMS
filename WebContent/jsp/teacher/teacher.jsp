@@ -31,12 +31,7 @@
 	<![endif]-->
 </head>
 <body>
-	<%
-		String username = "";
-		if (session.getAttribute("username") != null) {
-			username = session.getAttribute("username").toString();
-		}
-	%>
 	<!-- nav -->
-	<%@ include file="nav.jsp"%></body>
+	<%@ include file="../nav.jsp"%>
+</body>
 </html>

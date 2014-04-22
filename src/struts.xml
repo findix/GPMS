@@ -10,27 +10,27 @@
 		<default-action-ref name="index" />
 		<action name="index">
 			<result>
-				index.jsp
+				jsp/index.jsp
 			</result>
 		</action>
 		<action name="login">
 			<result>
-				login.jsp
+				jsp/login.jsp
 			</result>
 		</action>
 		<action name="changePasswd">
 			<result>
-				changePasswd.jsp
+				jsp/changePasswd.jsp
 			</result>
 		</action>
 		<action name="student">
-			<result type="redirect">
-				student.jsp
+			<result>
+				jsp/student/student.jsp
 			</result>
 		</action>
 		<action name="teacher">
-			<result type="redirect">
-				teacher.jsp
+			<result>
+				jsp/teacher/teacher.jsp
 			</result>
 		</action>
 		<action name="logout" class="com.find1x.gpms.action.LogoutAction">
@@ -43,15 +43,15 @@
 				/
 			</result>
 			<result name="error" type="redirect">
-				login.jsp
+				jsp/login.jsp
 			</result>
 		</action>
 		<action name="ChangePasswd" class="com.find1x.gpms.action.ChangePasswdAction">
 			<result>
-				result.jsp
+				jsp/result.jsp
 			</result>
 			<result name="error" type="redirect">
-				changePasswd?status=error
+				jsp/changePasswd?status=error
 			</result>
 		</action>
 	</package>

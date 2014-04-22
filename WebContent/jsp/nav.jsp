@@ -40,13 +40,12 @@
 				<%
 					}
 				%>
-
 			</ul>
 			<%
 				if (session.getAttribute("username") != null) {
 			%>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a>欢迎您，<%=session.getAttribute("username")%></a></li>
+				<li><a> 欢迎您， <%=session.getAttribute("username")%></a></li>
 				<li><a href='changePasswd'>修改密码</a></li>
 				<li><a href="logout">退出</a></li>
 			</ul>

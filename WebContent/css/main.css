@@ -1,13 +1,27 @@
 body {
-	background: url('../images/background(1).jpg') no-repeat center center fixed;
+	background: url('../images/background(7).jpg') no-repeat center center
+		fixed;
+	font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande",
+		"Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB",
+		"Hiragino Sans GB W3", "WenQuanYi Micro Hei", sans-serif;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	padding-top: 60px;
-	padding-bottom: 40px;
+	padding-top: 50px;
 }
 
-.jumbotron {
-	margin-top: 50px;
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,.lead {
+	font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande",
+		"Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB",
+		"Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei",
+		"WenQuanYi Micro Hei", sans-serif
 }
+
+nav {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*.jumbotron {
+	margin-top: 50px;
+}*/

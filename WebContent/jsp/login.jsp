@@ -47,14 +47,18 @@
 	%>
 
 	<div class="container" align="center">
-		<%
-			String status = request.getParameter("status");
-			if (status != null && status.equals("error")) {
-		%>
-		<div class="alert alert-danger" style="max-width: 300px;">用户名或密码错误</div>
-		<%
-			}
-		%>
+			<div id="legend" class="">
+				<legend>欢迎登录毕业设计管理系统</legend>
+			</div>
+			<%
+				String status = request.getParameter("status");
+				if (status != null && status.equals("error")) {
+			%>
+			<div class="alert alert-danger" style="max-width: 300px;">用户名或密码错误</div>
+			<%
+				}
+			%>
+		
 	</div>
 	<div class="container" id="login">
 
