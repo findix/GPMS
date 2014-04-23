@@ -32,7 +32,7 @@ nav {
 }
 
 #main {
-	padding-bottom: 150px;
+	padding-bottom: 180px;
 } /* 必须使用和footer相同的高度 */
 
 #content {
@@ -48,8 +48,8 @@ nav {
 
 #footer {
 	position: relative;
-	margin-top: -150px; /* footer高度的负值 */
-	height: 150px;
+	margin-top: -180px; /* footer高度的负值 */
+	height: 180px;
 	clear: both;
 }
 

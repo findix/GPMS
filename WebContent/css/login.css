@@ -1,11 +1,10 @@
 .form-login {
-	margin: 0 auto;
+	margin: 30px auto auto -15px;
 	color: #999;
 	filter: Alpha(opacity = 80);
 	opacity: 0.8;
 	text-align: center;
 	padding: 20px 10px 10px 10px;
-	margin: 30px auto;
 	border-top: 20px solid #151515;
 	background-color: #050505;
 	border-radius: 6px;
