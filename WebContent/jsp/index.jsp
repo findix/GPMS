@@ -46,21 +46,17 @@
 						<%
 							if (session.getAttribute("username") == null) {
 						%>
-						<div class="container">
-							<div class="jumbotron">
-								<h2>欢迎使用毕业设计管理系统</h2>
-								<table>
-									<tr>
-										<td><a class="btn btn-primary btn-large">公告栏</a>
-											<p>
-												全体本科、高职学生: <br />
-												本学期考试安排信息现将通过教学管理系统陆续发布，请同学登录到教学管理系统进行查询（信息查询－>考试安排）。
-												如有疑问，请咨询所在校区选考中心。
-												注：重修班及本学期毕业学生的免听选考课程考试的安排已经通过教学管理系统发布，请相关学生及时查询。 <br />
-											</p></td>
-									</tr>
-								</table>
+						<div class="jumbotron">
+							<div class="well">
+								<h2>欢迎使用毕业设计管理系统!</h2>
 							</div>
+							<a class="btn btn-primary btn-large">公告栏</a>
+							<p>
+								全体本科、高职学生: <br />
+								本学期考试安排信息现将通过教学管理系统陆续发布，请同学登录到教学管理系统进行查询（信息查询－>考试安排）。
+								如有疑问，请咨询所在校区选考中心。
+								注：重修班及本学期毕业学生的免听选考课程考试的安排已经通过教学管理系统发布，请相关学生及时查询。 <br />
+							</p>
 						</div>
 						<%
 							} else {
