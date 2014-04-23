@@ -19,13 +19,8 @@
 			<ul class="nav navbar-nav">
 				<li><a href="/gpms/">首页</a></li>
 				<%
-					if (session.getAttribute("username") == null) {
+					if (session.getAttribute("username") != null) {
 				%>
-				<li><a href="login">登录</a></li>
-				<%
-					} else {
-				%>
-
 				<li><a class="btn btn-normal" href="myOrderList">查看论文</a></li>
 				<%
 					}

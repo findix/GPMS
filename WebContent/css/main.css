@@ -1,3 +1,7 @@
+html,body,#wrap {
+	height: 100%;
+}
+
 body {
 	background: url('../images/background(7).jpg') no-repeat center center
 		fixed;
@@ -11,6 +15,11 @@ body {
 	padding-top: 50px;
 }
 
+body>#wrap {
+	height: auto;
+	min-height: 100%;
+}
+
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,.lead {
 	font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande",
 		"Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB",
@@ -22,6 +31,40 @@ nav {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/*.jumbotron {
-	margin-top: 50px;
-}*/
+#main {
+	padding-bottom: 150px;
+} /* 必须使用和footer相同的高度 */
+
+#content {
+	margin: 0 auto;
+	color: #000;
+	filter: Alpha(opacity = 90);
+	opacity: 0.9;
+	padding: 20px 10px 10px 10px;
+	margin-bottom:20px
+	border-top: 20px solid #151515;
+	background-color: #F5F5F5;
+	border-radius: 6px;
+}
+
+#footer {
+	position: relative;
+	margin-top: -150px; /* footer高度的负值 */
+	height: 150px;
+	clear: both;
+}
+
+.footer {
+	color: #999;
+	filter: Alpha(opacity = 80);
+	opacity: 0.8;
+	text-align: center;
+	padding: 30px 0;
+	margin-top: 70px;
+	border-top: 1px solid #151515;
+	background-color: #050505
+}
+
+.footer p {
+	position: relative;
+}

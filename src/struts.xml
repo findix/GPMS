@@ -33,6 +33,11 @@
 				jsp/teacher/teacher.jsp
 			</result>
 		</action>
+		<action name="template">
+			<result>
+				jsp/template/page.jsp
+			</result>
+		</action>
 		<action name="logout" class="com.find1x.gpms.action.LogoutAction">
 			<result type="redirect">
 				/
@@ -43,7 +48,7 @@
 				/
 			</result>
 			<result name="error" type="redirect">
-				jsp/login.jsp
+				/?status=error
 			</result>
 		</action>
 		<action name="ChangePasswd" class="com.find1x.gpms.action.ChangePasswdAction">

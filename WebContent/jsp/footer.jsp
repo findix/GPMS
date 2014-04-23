@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link href="css/footer.css" rel="stylesheet" media="screen">
-<footer class="footer ">
+<footer class="footer" id="footer">
 	<p>Copyright(c) 2014 FindiX Studio All Right Reserved.</p>
 	<p>
 		本网站由 <a href="http://www.find1x.com/">FindiX寻未工作室</a> 开发，并全部遵循 <a

@@ -2,6 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%
 	if (request.getSession().getAttribute("username") == null) {
-		response.sendRedirect("/gpms/jsp");
+		response.sendRedirect("index");
 	}
 %>

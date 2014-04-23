@@ -37,17 +37,16 @@
 			<%@ include file="/jsp/nav.jsp"%>
 
 			<div class="container bs-docs-container">
-				<%-- 在注释之间添加代码 --%>
-				<div align="center">
-					<div class="jumbotron" align="left"
-						style="margin-top: 225px; max-width: 800px">
-						<h2>${message}</h2>
-						<p>
-							<a href="/gpms/" class="btn btn-primary btn-lg">点击返回</a>
-						</p>
+				<div class="row">
+					<div class="col-md-3" id="side">
+						<%--导入侧边栏 --%>
+						<%@ include file="side.jsp"%></div>
+					<div class="col-md-9" id="content">
+						<%-- 在注释之间添加代码 --%>
+
+						<%-----------------%>
 					</div>
 				</div>
-				<%-----------------%>
 			</div>
 		</div>
 	</div>

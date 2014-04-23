@@ -1,7 +1,14 @@
 .form-login {
-	max-width: 330px;
-	padding: 15px;
 	margin: 0 auto;
+	color: #999;
+	filter: Alpha(opacity = 80);
+	opacity: 0.8;
+	text-align: center;
+	padding: 20px 10px 10px 10px;
+	margin-top: 20px;
+	border-top: 20px solid #151515;
+	background-color: #050505;
+	border-radius: 6px;
 }
 
 .form-login .form-login-heading,.form-login .checkbox {
