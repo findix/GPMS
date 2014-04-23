@@ -42,6 +42,7 @@
 .bs-sidebar.affix {
 	position: static;
 }
+
 /* First level of nav */
 .bs-sidenav {
 	margin-top: 30px;

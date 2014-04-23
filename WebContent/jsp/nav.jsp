@@ -10,7 +10,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand">毕业设计管理系统</a>
+			<a class="navbar-brand" href="index">毕业设计管理系统</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,7 +21,7 @@
 				<%
 					if (session.getAttribute("username") != null) {
 				%>
-				<li><a class="btn btn-normal" href="myOrderList">查看论文</a></li>
+				<li><a href="myOrderList">查看论文</a></li>
 				<%
 					}
 				%>

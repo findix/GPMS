@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link href="css/side.css" rel="stylesheet" media="screen">
-<div class="bs-sidebar hidden-print affix-top">
+<div class="bs-sidebar hidden-print affix">
 	<ul class="nav bs-sidenav">
 		<li><a href="#overview">概览</a></li>
 		<li><a href="#grid">栅格系统</a></li>
