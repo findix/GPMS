@@ -12,9 +12,6 @@ import org.mongodb.morphia.Datastore;
 import com.find1x.gpms.dao.UserDAO;
 import com.find1x.gpms.pojos.User;
 import com.find1x.gpms.util.MongoDBUtil;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -54,7 +51,7 @@ public class ChangePasswdAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		Datastore ds = MongoDBUtil.getInstance().getDatastore();
+		Datastore ds = MongoDBUtil.getDatastore();
 		List<User> list = UserDAO.findUserList(session.getAttribute("username")
 				.toString(), oldPassword);
 		if (list.size() == 0) {

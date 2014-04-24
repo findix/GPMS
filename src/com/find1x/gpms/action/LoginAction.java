@@ -10,7 +10,6 @@ import org.apache.struts2.ServletActionContext;
 
 import com.find1x.gpms.dao.UserDAO;
 import com.find1x.gpms.pojos.User;
-import com.find1x.gpms.util.MongoDBUtil;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
