@@ -7,12 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
+import org.mongodb.morphia.Datastore;
 
 import com.find1x.gpms.dao.UserDAO;
+import com.find1x.gpms.pojos.User;
 import com.find1x.gpms.util.MongoDBUtil;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -52,19 +51,16 @@ public class ChangePasswdAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		List<DBObject> list = UserDAO.getList(session.getAttribute("username")
+		Datastore ds = MongoDBUtil.getDatastore();
+		List<User> list = UserDAO.findUserList(session.getAttribute("username")
 				.toString(), oldPassword);
-		System.out.println(oldPassword);
 		if (list.size() == 0) {
 			return ERROR;
 		} else {
-			DBCollection user = MongoDBUtil.getCollection("users");
-			DBObject queryObject = new BasicDBObject();
-			queryObject.put("username", session.getAttribute("username")
-					.toString());
-			DBObject updateObject = user.findOne(queryObject);
-			updateObject.put("password", password);
-			user.findAndModify(queryObject, updateObject);
+			ds.updateFirst(
+					ds.find(User.class, "password", oldPassword),
+					ds.createUpdateOperations(User.class).set("password",
+							password));
 			message = "您已成功修改密码！";
 			return SUCCESS;
 		}

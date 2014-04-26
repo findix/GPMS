@@ -2,38 +2,58 @@ package com.find1x.gpms.util;
 
 import java.net.UnknownHostException;
 
-import com.find1x.gpms.pojos.User;
-import com.mongodb.BasicDBObject;
+import org.mongodb.morphia.Datastore;
+import org.mongodb.morphia.Morphia;
+
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 
-public class MongoDBUtil{
-	public static DBCollection getCollection(String collection){
-		Mongo mongo = null;
+public class MongoDBUtil {
+	private final static String DATABASE = "GPMS";
+
+	private static volatile MongoDBUtil INSTANCE;
+
+	private static Mongo mongo;
+	private static Morphia morphia;
+	private static Datastore ds;
+	private static DB db;
+	private static DBCollection dbCollection;
+
+	private MongoDBUtil() {
 		try {
 			mongo = new Mongo("localhost", 27017);
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		DB db=mongo.getDB("GPMS");
-		DBCollection users=db.getCollection(collection);
-		return users;
+		morphia = new Morphia();
+		morphia.mapPackage("com.find1x.gpms.pojos");
+		ds = morphia.createDatastore(mongo, DATABASE);
 	}
-	public static User convertDBObject2User(DBObject dBObject){
-		User user=new User();
-		user.setUsername(dBObject.get("username").toString());
-		user.setPassword(dBObject.get("password").toString());
-		user.setType(Integer.parseInt(dBObject.get("type").toString()));
-		return user;
+
+	private static MongoDBUtil getInstance() {
+		if (INSTANCE == null) {
+			synchronized (MongoDBUtil.class) {
+				// when more than two threads run into the first null check same
+				// time, to avoid instanced more than one time, it needs to be
+				// checked again.
+				if (INSTANCE == null) {
+					INSTANCE = new MongoDBUtil();
+				}
+			}
+		}
+		return INSTANCE;
 	}
-	public static DBObject convertUser2DBObject(User user){
-		DBObject dBObject =new BasicDBObject();
-		dBObject.put("username", user.getUsername());
-		dBObject.put("password", user.getPassword());
-		dBObject.put("type", user.getType());
-		return dBObject;
+
+	public static Datastore getDatastore() {
+		MongoDBUtil.getInstance();
+		return MongoDBUtil.ds;
+	}
+
+	public static DBCollection getCollection(String collection) {
+		db = mongo.getDB(DATABASE);
+		dbCollection = db.getCollection(collection);
+		MongoDBUtil.getInstance();
+		return MongoDBUtil.dbCollection;
 	}
 }

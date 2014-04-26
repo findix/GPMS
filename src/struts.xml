@@ -55,8 +55,8 @@
 			<result>
 				jsp/result.jsp
 			</result>
-			<result name="error" type="redirect">
-				jsp/changePasswd?status=error
+			<result name="error"  type="redirect">
+				changePasswd?status=error
 			</result>
 		</action>
 	</package>

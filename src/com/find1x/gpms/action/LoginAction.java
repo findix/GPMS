@@ -10,7 +10,6 @@ import org.apache.struts2.ServletActionContext;
 
 import com.find1x.gpms.dao.UserDAO;
 import com.find1x.gpms.pojos.User;
-import com.mongodb.DBObject;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -45,11 +44,10 @@ public class LoginAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		List<DBObject> list = UserDAO.getList(user.getUsername(),
-				user.getPassword());
+		List<User> list = UserDAO.findUserList(user.getUsername(), user.getPassword());
 		if (list.size() > 0) {
 			session.setAttribute("username", user.getUsername());
-			session.setAttribute("type", list.get(0).get("type"));
+			session.setAttribute("type", list.get(0).getType());
 			return SUCCESS;
 		} else {
 			return ERROR;
