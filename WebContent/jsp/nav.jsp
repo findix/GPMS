@@ -31,7 +31,7 @@
 									.parseInt(session.getAttribute("type").toString()) > 0) {
 				%>
 				<li><a href="manage" id="admin">论文管理</a></li>
-				<li><a href="orderList" id="admin">学生管理</a></li>
+			
 				<%
 					}
 				%>
