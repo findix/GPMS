@@ -7,3 +7,4 @@
 #Setting Files
 /.settings
 .classpath
+/bin/

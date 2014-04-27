@@ -55,9 +55,60 @@
 			<result>
 				jsp/result.jsp
 			</result>
-			<result name="error"  type="redirect">
-				changePasswd?status=error
+			<result name="error" type="redirect">
+				jsp/changePasswd?status=error
 			</result>
+		</action>
+		<action name="teacherSubject" class="com.find1x.gpms.action.teacherSubjectAction">
+			<result>
+				jsp/teacher/teacherSubject.jsp
+			</result>
+			
+		</action>
+			<action name="teacherInfo" class="com.find1x.gpms.action.teacherInfoAction">
+			<result>
+				jsp/teacher/teacherInfo.jsp
+			</result>
+			
+		</action>
+			<action name="teacherStudent" class="com.find1x.gpms.action.teacherStudentAction">
+			<result>
+				jsp/teacher/teacherStudent.jsp
+			</result>
+			
+		</action>
+		
+				<action name="teacherStudentGrade" class="com.find1x.gpms.action.teacherStudentGradeAction">
+			<result>
+				jsp/teacher/teacherStudentGrade.jsp
+			</result>
+			
+		</action>
+				<action name="teacherStudentDetail" class="com.find1x.gpms.action.teacherStudentDetailAction">
+			<result>
+				jsp/teacher/teacherStudentDetail.jsp
+			</result>
+			
+		</action>
+		
+		<action name="studentInfo" class="com.find1x.gpms.action.studentInfoAction">
+			<result>
+				jsp/student/studentInfo.jsp
+			</result>
+			
+		</action>
+		<action name="studentTeacher" class="com.find1x.gpms.action.studentTeacherAction">
+			<result>
+				jsp/student/studentTeacher.jsp
+			</result>
+			
+		</action>
+		
+		<action name="studentGrade" class="com.find1x.gpms.action.studentGradeAction">
+			<result>
+				jsp/student/studentGrade.jsp
+			</result>
+			
 		</action>
 	</package>
 </struts>

@@ -32,24 +32,26 @@ nav {
 }
 
 #main {
-	padding-bottom: 180px;
+	padding-bottom: 150px;
 } /* 必须使用和footer相同的高度 */
 
 #content {
-	margin: 30px auto;
+	margin: 0 auto;
+	margin-top:50px;
 	color: #000;
 	filter: Alpha(opacity = 90);
 	opacity: 0.9;
 	padding: 20px 10px 10px 10px;
-	border-top: 20px solid #E5E5E5;
+	margin-bottom:20px
+	border-top: 20px solid #151515;
 	background-color: #F5F5F5;
 	border-radius: 6px;
 }
 
 #footer {
 	position: relative;
-	margin-top: -180px; /* footer高度的负值 */
-	height: 180px;
+	margin-top: -150px; /* footer高度的负值 */
+	height: 150px;
 	clear: both;
 }
 
@@ -66,4 +68,8 @@ nav {
 
 .footer p {
 	position: relative;
+}
+
+.submit{
+	text-align: center;
 }

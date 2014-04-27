@@ -30,8 +30,8 @@
 <body>
 	<div id="wrap">
 		<div id="main" class="clearfix">
-			<%-- 此行控制是否该页面未登录无法访问 --%>
-			<%@ include file="/jsp/authentication.jsp"%>
+			<%-- 此行控制是否该页面未登录无法访问 --%>  
+		<%@ include file="/jsp/authentication.jsp"%>
 
 			<%-- header导航条--%>
 			<%@ include file="/jsp/nav.jsp"%>
@@ -42,14 +42,17 @@
 						<%--导入侧边栏 --%>
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
-						<%-- 在注释之间添加代码 --%>											
-						<font face="华文新魏" size="5">通知： <br/>
-							1.毕业设计管理系统将于2015年1月5日开启 <br/>
-							2.各位教师须在2015年1月10前将自己的题目上传到系统上 <br/>
-							3.题目将于1月15日前审核结束，请各位教师在1月16日-1月20日内查看邮箱，如需修改，请于1月22日前再次上传题目 <br/>
-							4.现拟定第一次选题时间为2月1日，第二次选题时间为2月5日 <br/>
-							5.各位教师需在2月10日前与自己所带学生取得联系，并进行初步交流 <br/>
-							6.在每阶段结束后，教师需在规定时间内将成绩与意见录入系统 <br/></font>
+						<%-- 在注释之间添加代码 --%>
+						<form action="#" method="post" role="form">
+						题目名称:<input type="text" class="form-control" name="title" /><br/><br/>
+						题目简介:<br/><TEXTAREA name="info" class="form-control" rows="3"></TEXTAREA><br/>
+						题目要求:<br/><TEXTAREA name="requirement" class="form-control" rows="5"></TEXTAREA><br/><br/>
+						面向专业:&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="specialty">软件工程&nbsp;&nbsp;
+							  <input type="checkbox" name="specialty">信息安全&nbsp;&nbsp;
+							  <input type="checkbox" name="specialty">计算机科学与技术<br/><br/>
+						可选人数：<input type="text" name="total"/>  <br/>
+						<div class="submit"><input type="submit" value="提交" />	</div>
+						</form>
 						<%-----------------%>
 					</div>
 				</div>

@@ -42,14 +42,16 @@
 						<%--导入侧边栏 --%>
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
-						<%-- 在注释之间添加代码 --%>											
-						<font face="华文新魏" size="5">通知： <br/>
-							1.毕业设计管理系统将于2015年1月5日开启 <br/>
-							2.各位教师须在2015年1月10前将自己的题目上传到系统上 <br/>
-							3.题目将于1月15日前审核结束，请各位教师在1月16日-1月20日内查看邮箱，如需修改，请于1月22日前再次上传题目 <br/>
-							4.现拟定第一次选题时间为2月1日，第二次选题时间为2月5日 <br/>
-							5.各位教师需在2月10日前与自己所带学生取得联系，并进行初步交流 <br/>
-							6.在每阶段结束后，教师需在规定时间内将成绩与意见录入系统 <br/></font>
+						<%-- 在注释之间添加代码 --%>
+					<form>
+					初评成绩<input type="text" name="chuping"/><br/><br/>
+					初评意见<textarea class="form-control" rows="3"></textarea><br/>
+					评阅成绩<input type="text" name="pingyue"/><br/><br/>
+					评阅意见<textarea class="form-control" rows="3"></textarea><br/>
+					答辩成绩<input type="text" name="dabian"/><br/><br/>
+					答辩意见<textarea class="form-control" rows="3"></textarea><br/><br/>
+					<div class="submit"><input type="submit" value="提交"/><input type="reset" value="重置" /></div>
+					</form>
 						<%-----------------%>
 					</div>
 				</div>
