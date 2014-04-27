@@ -43,19 +43,12 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<form action="#" method="post" role="form">
-						题目名称:<input type="text" class="form-control" name="title" /><br/><br/>
-						题目简介:<br/><TEXTAREA name="info" class="form-control" rows="3"></TEXTAREA><br/>
-						题目要求:<br/><TEXTAREA name="requirement" class="form-control" rows="5"></TEXTAREA><br/><br/>
-						面向专业:&nbsp;
-						<select>
-						<option>软件工程</option>
-						<option>信息安全</option>
-						<option>计算机科学与技术</option>
-						</select><br/><br/>
-						可选人数：<input type="text" name="total"/>  <br/>
-						<div class="submit"><input type="submit" value="提交" />	</div>
-						</form>
+						<table class="table table-bordered">
+						<tr><td>题目名称</td><td>题目简介</td><td>面向专业</td><td>其他</td></tr>
+						<tr><td></td><td></td><td></td><td><button type="button" class="btn btn-success" onclick="window.location='teacherSubject'">修改</button></td></tr>
+						<tr><td></td><td></td><td></td><td></td></tr>
+						</table>
+						<div class="submit"><button type="button" class="btn btn-success" onclick="window.location='teacherSubject'">继续添加</button></div>
 						<%-----------------%>
 					</div>
 				</div>

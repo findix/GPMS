@@ -27,16 +27,17 @@ public class IssueDAO {
 	public static boolean addIssue(String title, String info,
 			String requirement, String specialty, String total) {
 		try {
-			DBCollection menu = MongoDBUtil.getCollection("issues");
+			DBCollection issues = MongoDBUtil.getCollection("issues");
 			DBObject issue = new BasicDBObject();
 			issue.put("title", title);
 			issue.put("info", info);
 			issue.put("requirement", requirement);
 			issue.put("specialty", specialty);
 			issue.put("total", total);
-			menu.save(issue);
+			issues.save(issue);
 			return true;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return false;
 		}
 	}

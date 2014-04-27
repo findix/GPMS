@@ -51,9 +51,9 @@ public class MongoDBUtil {
 	}
 
 	public static DBCollection getCollection(String collection) {
-		db = mongo.getDB(DATABASE);
-		dbCollection = db.getCollection(collection);
 		MongoDBUtil.getInstance();
+		db = mongo.getDB(DATABASE);
+		dbCollection = db.getCollection(collection);		
 		return MongoDBUtil.dbCollection;
 	}
 }

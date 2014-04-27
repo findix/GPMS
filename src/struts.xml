@@ -65,38 +65,45 @@
 			</result>
 			
 		</action>
+		<action name="teacherSubjectManage" class="com.find1x.gpms.action.teacherSubjectManageAction">
+			<result>
+				jsp/teacher/teacherSubjectManage.jsp
+			</result>			
+		</action>
 			<action name="teacherInfo" class="com.find1x.gpms.action.teacherInfoAction">
 			<result>
 				jsp/teacher/teacherInfo.jsp
-			</result>
-			
+			</result>			
 		</action>
 			<action name="teacherStudent" class="com.find1x.gpms.action.teacherStudentAction">
 			<result>
 				jsp/teacher/teacherStudent.jsp
-			</result>
-			
+			</result>			
 		</action>
 		
 				<action name="teacherStudentGrade" class="com.find1x.gpms.action.teacherStudentGradeAction">
 			<result>
 				jsp/teacher/teacherStudentGrade.jsp
-			</result>
-			
+			</result>		
 		</action>
 				<action name="teacherStudentDetail" class="com.find1x.gpms.action.teacherStudentDetailAction">
 			<result>
 				jsp/teacher/teacherStudentDetail.jsp
-			</result>
-			
+			</result>		
+		</action>
+		
+			<action name="teacherUploadFiles" class="com.find1x.gpms.action.teacherUploadFilesAction">
+			<result>
+				jsp/teacher/teacherUploadFiles.jsp
+			</result>		
 		</action>
 		
 		<action name="studentInfo" class="com.find1x.gpms.action.studentInfoAction">
 			<result>
 				jsp/student/studentInfo.jsp
-			</result>
-			
+			</result>		
 		</action>
+		
 		<action name="studentTeacher" class="com.find1x.gpms.action.studentTeacherAction">
 			<result>
 				jsp/student/studentTeacher.jsp
@@ -107,8 +114,7 @@
 		<action name="studentGrade" class="com.find1x.gpms.action.studentGradeAction">
 			<result>
 				jsp/student/studentGrade.jsp
-			</result>
-			
+			</result>			
 		</action>
 	</package>
 </struts>
