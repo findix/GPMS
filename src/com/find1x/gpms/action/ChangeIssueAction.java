@@ -9,23 +9,20 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.find1x.gpms.dao.IssueDAO;
-import com.find1x.gpms.dao.UserDAO;
 import com.find1x.gpms.pojos.Issue;
-import com.find1x.gpms.pojos.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class teacherSubjectManageAction extends ActionSupport {
-
+public class ChangeIssueAction extends ActionSupport{
 	ActionContext context = ActionContext.getContext();
 	HttpServletRequest request = (HttpServletRequest) context
 			.get(ServletActionContext.HTTP_REQUEST);
 	HttpServletResponse response = (HttpServletResponse) context
 			.get(ServletActionContext.HTTP_RESPONSE);
 	HttpSession session = request.getSession();
-
-	private static final long serialVersionUID = 1L;
 	
+	private Issue issue;
+	private String _id;
 	private List<Issue> issues;
 
 	public List<Issue> getIssues() {
@@ -35,11 +32,30 @@ public class teacherSubjectManageAction extends ActionSupport {
 	public void setIssues(List<Issue> issues) {
 		this.issues = issues;
 	}
+	public String get_id() {
+		return _id;
+	}
+
+	public void set_id(String _id) {
+		this._id = _id;
+	}
+
+	public Issue getIssue() {
+		return issue;
+	}
+
+	public void setIssue(Issue issue) {
+		this.issue = issue;
+	}
 
 	@Override
 	public String execute() throws Exception {
-		issues = IssueDAO.getList();
-		return SUCCESS;
+		if (IssueDAO.changeIssue(_id,issue.getTitle(), issue.getInfo(), issue.getRequirement(),
+				issue.getSpecialty(), issue.getTotal())) {
+			issues = IssueDAO.getList();
+			return SUCCESS;
+		} else {
+			return ERROR;
+		}
 	}
-
 }

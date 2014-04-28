@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" %>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,19 +44,32 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<table class="table table-bordered">
-						<tr><td>题目名称</td><td>题目简介</td><td>面向专业</td><td>其他</td></tr>
-							<c:forEach items="${issues}" var="subject" >
-								<tr><td>${subject.title}</td><td>${subject.info}</td><td>${subject.specialty}</td>
-								<td><button type="button" class="btn btn-success" onclick='changeSubject("${subject._id}")'>修改</button></td></tr>
-							</c:forEach>
-						</table>
-						<script>
-							function changeSubject(_id){
-								window.location.href=('teacherChangeSubject?_id='+_id+'');
-							}
-						</script>
-						<div class="submit"><button type="button" class="btn btn-success" onclick="window.location='teacherSubject'">继续添加</button></div>
+						<form action="ChangeIssue" method="post">
+						题目编号:<input type="text" class="form-control" name="_id" value="${issue._id}" readonly="readonly" /><br/><br/>
+						题目名称:<input type="text" class="form-control" name="issue.title" value="${issue.title}" /><br/><br/>
+						题目简介:<br/><TEXTAREA name="issue.info" class="form-control" rows="3">${issue.info}</TEXTAREA><br/>
+						题目要求:<br/><TEXTAREA name="issue.requirement" class="form-control" rows="5">${issue.requirement}</TEXTAREA><br/><br/>
+						面向专业:&nbsp;
+						<select name="issue.specialty">
+						<c:if test="${issue.specialty=='软件工程'}">
+							<option selected="selected">软件工程</option>
+							<option>信息安全</option>
+							<option>计算机科学与技术</option>
+						</c:if>
+						<c:if test="${issue.specialty=='信息安全'}">
+							<option>软件工程</option>
+							<option selected="selected">信息安全</option>
+							<option>计算机科学与技术</option>
+						</c:if>
+						<c:if test="${issue.specialty=='计算机科学与技术'}">
+							<option>软件工程</option>
+							<option>信息安全</option>
+							<option selected="selected">计算机科学与技术</option>
+						</c:if>
+						</select><br/><br/>
+						可选人数：<input type="text" name="issue.total" value="${issue.total}" />  <br/>
+						<div class="submit"><input type="submit" value="修改" />	</div>
+						</form>
 						<%-----------------%>
 					</div>
 				</div>

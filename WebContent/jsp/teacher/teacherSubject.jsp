@@ -43,17 +43,17 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<form action="#" method="post" role="form">
-						题目名称:<input type="text" class="form-control" name="title" /><br/><br/>
-						题目简介:<br/><TEXTAREA name="info" class="form-control" rows="3"></TEXTAREA><br/>
-						题目要求:<br/><TEXTAREA name="requirement" class="form-control" rows="5"></TEXTAREA><br/><br/>
+						<form action="UploadIssue" method="post" role="form">
+						题目名称:<input type="text" class="form-control" name="issue.title" /><br/><br/>
+						题目简介:<br/><TEXTAREA name="issue.info" class="form-control" rows="3"></TEXTAREA><br/>
+						题目要求:<br/><TEXTAREA name="issue.requirement" class="form-control" rows="5"></TEXTAREA><br/><br/>
 						面向专业:&nbsp;
-						<select>
+						<select name="issue.specialty">
 						<option>软件工程</option>
 						<option>信息安全</option>
 						<option>计算机科学与技术</option>
 						</select><br/><br/>
-						可选人数：<input type="text" name="total"/>  <br/>
+						可选人数：<input type="text" name="issue.total"/>  <br/>
 						<div class="submit"><input type="submit" value="提交" />	</div>
 						</form>
 						<%-----------------%>

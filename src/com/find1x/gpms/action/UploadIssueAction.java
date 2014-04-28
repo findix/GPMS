@@ -10,7 +10,6 @@ import org.apache.struts2.ServletActionContext;
 
 import com.find1x.gpms.dao.IssueDAO;
 import com.find1x.gpms.pojos.Issue;
-import com.mongodb.DBObject;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -23,8 +22,15 @@ public class UploadIssueAction extends ActionSupport{
 	HttpSession session = request.getSession();
 	
 	private Issue issue;
-	private String message;
-	
+	private List<Issue> issues;
+
+	public List<Issue> getIssues() {
+		return issues;
+	}
+
+	public void setIssues(List<Issue> issues) {
+		this.issues = issues;
+	}
 	public Issue getIssue() {
 		return issue;
 	}
@@ -33,18 +39,11 @@ public class UploadIssueAction extends ActionSupport{
 		this.issue = issue;
 	}
 
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	@Override
 	public String execute() throws Exception {
 		if (IssueDAO.addIssue(issue.getTitle(), issue.getInfo(), issue.getRequirement(),
 				issue.getSpecialty(), issue.getTotal())) {
+			issues = IssueDAO.getList();
 			return SUCCESS;
 		} else {
 			return ERROR;

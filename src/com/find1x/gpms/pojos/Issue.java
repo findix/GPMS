@@ -1,17 +1,23 @@
 package com.find1x.gpms.pojos;
 
+import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
+
+@Entity("issues")
 public class Issue {
-	private int _id;
+	@Id
+	private ObjectId _id;
 	private String title;
 	private String info;
 	private String requirement;
 	private String specialty;
 	private String total;
 	
-	public int get_id() {
+	public ObjectId get_id() {
 		return _id;
 	}
-	public void set_id(int _id) {
+	public void set_id(ObjectId _id) {
 		this._id = _id;
 	}
 	public String getTitle() {
