@@ -50,7 +50,7 @@
 							<div class="well">
 								<h2>欢迎使用毕业设计管理系统!</h2>
 							</div>
-							<a class="btn btn-primary btn-large">公告栏</a>
+							<div class="alert alert-info">公告栏</div>
 							<p>
 								全体本科、高职学生: <br />
 								本学期考试安排信息现将通过教学管理系统陆续发布，请同学登录到教学管理系统进行查询（信息查询－考试安排）。
