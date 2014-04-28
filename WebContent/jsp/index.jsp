@@ -28,9 +28,6 @@
 	<![endif]-->
 </head>
 <body>
-	<%
-		throw new Exception();
-	%>
 	<div id="wrap">
 		<div id="main" class="clearfix">
 
