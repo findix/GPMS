@@ -1,4 +1,7 @@
+/build
+/bin
 *.class
+
 
 # Package Files #
 *.war
@@ -7,4 +10,4 @@
 #Setting Files
 /.settings
 .classpath
-/bin/
+
