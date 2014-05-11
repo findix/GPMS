@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -51,21 +51,21 @@
 						题目要求:<br/><TEXTAREA name="issue.requirement" class="form-control" rows="5">${issue.requirement}</TEXTAREA><br/><br/>
 						面向专业:&nbsp;
 						<select name="issue.specialty">
-						<c:if test="${issue.specialty=='软件工程'}">
+						<s:if test="#request.issue.specialty=='软件工程'">
 							<option selected="selected">软件工程</option>
 							<option>信息安全</option>
 							<option>计算机科学与技术</option>
-						</c:if>
-						<c:if test="${issue.specialty=='信息安全'}">
+						</s:if>
+						<s:if test="#request.issue.specialty=='信息安全'">
 							<option>软件工程</option>
 							<option selected="selected">信息安全</option>
 							<option>计算机科学与技术</option>
-						</c:if>
-						<c:if test="${issue.specialty=='计算机科学与技术'}">
+						</s:if>
+						<s:if test="#request.issue.specialty=='计算机科学与技术'">
 							<option>软件工程</option>
 							<option>信息安全</option>
 							<option selected="selected">计算机科学与技术</option>
-						</c:if>
+						</s:if>
 						</select><br/><br/>
 						可选人数：<input type="text" name="issue.total" value="${issue.total}" />  <br/>
 						<div class="submit"><input type="submit" value="修改" />	</div>

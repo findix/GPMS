@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -46,10 +46,10 @@
 						<%-- 在注释之间添加代码 --%>
 						<table class="table table-bordered">
 						<tr><td>题目名称</td><td>题目简介</td><td>面向专业</td><td>其他</td></tr>
-							<c:forEach items="${issues}" var="subject" >
+							<s:iterator value="#request.issues" var="subject">
 								<tr><td>${subject.title}</td><td>${subject.info}</td><td>${subject.specialty}</td>
 								<td><button type="button" class="btn btn-success" onclick='changeSubject("${subject._id}")'>修改</button></td></tr>
-							</c:forEach>
+							</s:iterator>
 						</table>
 						<script>
 							function changeSubject(_id){
