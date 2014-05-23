@@ -132,5 +132,103 @@
 				jsp/student/studentGrade.jsp
 			</result>
 		</action>
+		
+				<!-- 系主任页面 -->
+		<action name="departmentHead">
+			<result>
+				jsp/departmentHead/departmentHead.jsp
+			</result>
+		</action>
+		
+		<action name="departmentHeadInfo">
+			<result>
+				jsp/departmentHead/departmentHeadInfo.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadTeacher">
+			<result>
+				jsp/departmentHead/departmentHeadTeacher.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadTeacherDetail">
+			<result>
+				jsp/departmentHead/departmentHeadTeacherDetail.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadStudent">
+			<result>
+				jsp/departmentHead/departmentHeadStudent.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadStudentDetail">
+			<result>
+				jsp/departmentHead/departmentHeadStudentDetail.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadStudentGrade">
+			<result>
+				jsp/departmentHead/departmentHeadStudentGrade.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadSubjectDetail">
+			<result>
+				jsp/departmentHead/departmentHeadSubjectDetail.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadSubjectManage">
+			<result>
+				jsp/departmentHead/departmentHeadSubjectManage.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadGroup">
+			<result>
+				jsp/departmentHead/departmentHeadGroup.jsp
+			</result>
+		</action>
+		
+		<!-- 教务员页面 -->
+		<action name="Admin">
+			<result>
+				jsp/Administrator/Admin.jsp
+			</result>
+		</action>
+		
+		<action name="AdminSys">
+			<result>
+				jsp/Administrator/AdminSys.jsp
+			</result>
+		</action>
+		
+			<action name="AdminTeacher">
+			<result>
+				jsp/Administrator/AdminTeacher.jsp
+			</result>
+		</action>
+		
+		<action name="addTeacher">
+			<result>
+				jsp/Administrator/addTeacher.jsp
+			</result>
+		</action>
+		
+		<action name="AdminStudent">
+			<result>
+				jsp/Administrator/AdminStudent.jsp
+			</result>
+		</action>
+		
+		<action name="addStudent">
+			<result>
+				jsp/Administrator/addStudent.jsp
+			</result>
+		</action>
 	</package>
 </struts>

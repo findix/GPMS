@@ -59,12 +59,20 @@
 							</p>
 						</div>
 						<%
+							//权限 0为学生 1为老师 2为教务员 3为系主任
 							} else {
 								if (session.getAttribute("type") != null
 										&& session.getAttribute("type").toString().equals("0")) {
 									response.sendRedirect("/gpms/student");
-								} else {
+								}else if(session.getAttribute("type") != null
+										&& session.getAttribute("type").toString().equals("1")){
 									response.sendRedirect("/gpms/teacher");
+								}else if(session.getAttribute("type") != null
+										&& session.getAttribute("type").toString().equals("2")){
+									response.sendRedirect("/gpms/Admin");
+								}else if(session.getAttribute("type") != null
+										&& session.getAttribute("type").toString().equals("3")){
+									response.sendRedirect("/gpms/departmentHead");
 								}
 							}
 						%>
