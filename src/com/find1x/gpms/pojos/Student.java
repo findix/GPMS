@@ -16,7 +16,14 @@ public class Student {
 	private String specialty;
 	private String telephone;
 	private String email;
+	private String teacher;
 	
+	public String getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(String teacher) {
+		this.teacher = teacher;
+	}
 	public ObjectId get_id() {
 		return _id;
 	}

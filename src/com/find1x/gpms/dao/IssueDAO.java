@@ -4,14 +4,9 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
-
 import com.find1x.gpms.pojos.Issue;
-import com.find1x.gpms.pojos.User;
 import com.find1x.gpms.util.MongoDBUtil;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCollection;
-import com.mongodb.DBCursor;
-import com.mongodb.DBObject;
+
 
 public class IssueDAO {
 	public static List<Issue> getList(String specialty) {
