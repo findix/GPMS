@@ -74,6 +74,11 @@
 				jsp/teacher/teacherSubjectManage.jsp
 			</result>
 		</action>
+		<action name="DeleteIssue" class="com.find1x.gpms.action.DeleteIssueAction">
+			<result>
+				jsp/teacher/teacherSubjectManage.jsp
+			</result>
+		</action>
 		<action name="teacherSubjectManage"
 			class="com.find1x.gpms.action.teacherSubjectManageAction">
 			<result>
@@ -132,14 +137,13 @@
 				jsp/student/studentGrade.jsp
 			</result>
 		</action>
-		
-				<!-- 系主任页面 -->
+
 		<action name="departmentHead">
 			<result>
 				jsp/departmentHead/departmentHead.jsp
 			</result>
 		</action>
-		
+
 		<action name="departmentHeadInfo">
 			<result>
 				jsp/departmentHead/departmentHeadInfo.jsp
@@ -193,38 +197,37 @@
 				jsp/departmentHead/departmentHeadGroup.jsp
 			</result>
 		</action>
-		
-		<!-- 教务员页面 -->
+
 		<action name="Admin">
 			<result>
 				jsp/Administrator/Admin.jsp
 			</result>
 		</action>
-		
+
 		<action name="AdminSys">
 			<result>
 				jsp/Administrator/AdminSys.jsp
 			</result>
 		</action>
-		
-			<action name="AdminTeacher">
+
+		<action name="AdminTeacher">
 			<result>
 				jsp/Administrator/AdminTeacher.jsp
 			</result>
 		</action>
-		
+
 		<action name="addTeacher">
 			<result>
 				jsp/Administrator/addTeacher.jsp
 			</result>
 		</action>
-		
+
 		<action name="AdminStudent">
 			<result>
 				jsp/Administrator/AdminStudent.jsp
 			</result>
 		</action>
-		
+
 		<action name="addStudent">
 			<result>
 				jsp/Administrator/addStudent.jsp

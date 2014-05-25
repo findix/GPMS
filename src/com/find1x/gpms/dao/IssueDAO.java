@@ -71,4 +71,15 @@ public class IssueDAO {
 			return false;
 		}
 	}
+	
+	public static boolean deleteIssue(String _id) {
+		try {
+			Datastore ds = MongoDBUtil.getDatastore();
+			ds.delete(ds.find(Issue.class).filter("_id", new ObjectId(_id)));				
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 }

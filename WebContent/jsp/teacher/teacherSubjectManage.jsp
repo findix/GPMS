@@ -45,15 +45,18 @@
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
 						<table class="table table-bordered">
-						<tr><td>题目名称</td><td>题目简介</td><td>面向专业</td><td>其他</td></tr>
+						<tr><td>题目名称</td><td>题目简介</td><td>面向专业</td><td colspan="2">其他</td></tr>
 							<s:iterator value="#request.issues" var="subject">
 								<tr><td>${subject.title}</td><td>${subject.info}</td><td>${subject.specialty}</td>
-								<td><button type="button" class="btn btn-success" onclick='changeSubject("${subject._id}")'>修改</button></td></tr>
+								<td><button type="button" class="btn btn-success" onclick='changeSubject("${subject._id}")'>修改</button></td><td><button type="button" class="btn btn-danger" onclick='deleteSubject("${subject._id}")'>删除</button></td></tr>
 							</s:iterator>
 						</table>
 						<script>
 							function changeSubject(_id){
 								window.location.href=('teacherChangeSubject?_id='+_id+'');
+							}
+							function deleteSubject(_id){
+								window.location.href=('DeleteIssue?_id='+_id+'');
 							}
 						</script>
 						<div class="submit"><button type="button" class="btn btn-success" onclick="window.location='teacherSubject'">继续添加</button></div>
