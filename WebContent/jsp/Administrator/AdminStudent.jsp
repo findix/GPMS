@@ -46,7 +46,7 @@
 					<div>导入学生信息</div><br/>
 					<input type="file" style="float: left"/><button style="float: right" onclick="window.location='addStudent'">增加记录</button>
 					<table class="table table-bordered" style="text-align: center">
-					<tr><td>姓名</td><td>性别</td><td>学号</td><td>班级</td><td>学院</td><td>专业</td><td>电话</td><td>邮箱</td><td colspan="2">其他</td></tr>
+					<tr><td>学号</td><td>姓名</td><td>性别</td><td>班级</td><td>学院</td><td>专业</td><td>电话</td><td>邮箱</td><td colspan="2">其他</td></tr>
 					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><button>删除记录</button></td><td><button>重置密码</button></td></tr>				
 					</table>
 						<%-----------------%>
