@@ -9,6 +9,7 @@ public class User {
 
 	@Id
 	private ObjectId _id;
+	private ObjectId refId;
 	private String username;
 	private String password;
 	private int type;
@@ -29,6 +30,14 @@ public class User {
 
 	public void set_id(ObjectId _id) {
 		this._id = _id;
+	}
+
+	public ObjectId getRefId() {
+		return refId;
+	}
+
+	public void setRefId(ObjectId refId) {
+		this.refId = refId;
 	}
 
 	public String getUsername() {

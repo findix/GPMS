@@ -1,3 +1,4 @@
+<%@page import="com.find1x.gpms.dao.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -31,7 +32,7 @@
 									.parseInt(session.getAttribute("type").toString()) > 0) {
 				%>
 				<li><a href="manage" id="admin">论文管理</a></li>
-			
+
 				<%
 					}
 				%>
@@ -40,7 +41,9 @@
 				if (session.getAttribute("username") != null) {
 			%>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a> 欢迎您， <%=session.getAttribute("username")%></a></li>
+				<li><a> 欢迎您， <%=UserDAO.getUserName(session.getAttribute("username")
+						.toString(), Integer.parseInt(session.getAttribute(
+						"type").toString()))%></a></li>
 				<li><a href='changePasswd'>修改密码</a></li>
 				<li><a href="logout">退出</a></li>
 			</ul>

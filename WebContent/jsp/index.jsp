@@ -69,7 +69,7 @@
 									response.sendRedirect("/gpms/teacher");
 								}else if(session.getAttribute("type") != null
 										&& session.getAttribute("type").toString().equals("2")){
-									response.sendRedirect("/gpms/Admin");
+									response.sendRedirect("/gpms/admin");
 								}else if(session.getAttribute("type") != null
 										&& session.getAttribute("type").toString().equals("3")){
 									response.sendRedirect("/gpms/departmentHead");
