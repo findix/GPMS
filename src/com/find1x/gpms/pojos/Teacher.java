@@ -14,7 +14,6 @@ public class Teacher {
 	private String department;
 	private String telephone;
 	private String email;
-	private String type;
 	
 	public ObjectId get_id() {
 		return _id;
@@ -57,11 +56,5 @@ public class Teacher {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
 	}
 }

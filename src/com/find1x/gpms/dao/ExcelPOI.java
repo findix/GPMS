@@ -70,7 +70,8 @@ public class ExcelPOI {
 				specialty = getStringCellValue(row.getCell((short) 5)).trim();
 				telephone = getStringCellValue(row.getCell((short) 6)).trim();
 				email = getStringCellValue(row.getCell((short) 7)).trim();
-				teacher = getStringCellValue(row.getCell((short) 8)).trim();
+				StudentDAO.createUser(StudentDAO.addStudent
+						(no, name, sex, classno, department, specialty, telephone, email), no);
 			}
 			return true;
 		} catch (IOException e) {
@@ -110,6 +111,13 @@ public class ExcelPOI {
 				telephone = getStringCellValue(row.getCell((short) 4)).trim();
 				email = getStringCellValue(row.getCell((short) 5)).trim();
 				type = getStringCellValue(row.getCell((short) 6)).trim();
+				int typenum;
+				if(type.equals("老师"))typenum=1;
+				else if(type.equals("教务员"))typenum=2;
+				else if(type.equals("系主任"))typenum=3;
+				else typenum=1;
+				TeacherDAO.createUser(TeacherDAO.addTeacher
+						(no, name, sex, department, telephone, email), no ,typenum);
 			}
 			return true;
 		} catch (IOException e) {
