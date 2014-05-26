@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<package name="administrator" namespace="/" extends="struts-default">
+	<package name="teacher" namespace="/" extends="struts-default">
 		<default-action-ref name="index" />
 		
 		<!-- Pages -->

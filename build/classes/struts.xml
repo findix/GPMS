@@ -7,6 +7,10 @@
 	<!-- constant -->
 	<constant name="struts.devMode" value="true" />
 
+	<package name="administrator" namespace="/" extends="struts-default">
+		<default-action-ref name="index" />
+	</package>
+
 	<!-- include -->
 	<include file="struts.general.xml" />
 	<include file="struts.administrator.xml" />
