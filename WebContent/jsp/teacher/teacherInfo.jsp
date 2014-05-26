@@ -44,10 +44,10 @@
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
 						<table class="table table-bordered">
-						<tr><td>工号</td><td></td><td>姓名</td><td></td></tr>
-						<tr><td>学院</td><td></td><td>职务</td><td></td></tr>
-						<tr><td>性别</td><td></td><td>联系电话</td><td></td></tr>
-						<tr><td>邮箱</td><td colspan="3"></td></tr>					
+						<tr><td>工号</td><td>${teacher.no}</td><td>姓名</td><td>${teacher.name}</td></tr>
+						<tr><td>学院</td><td>${teacher.department}</td><td>职务</td><td>${teacher.type}</td></tr>
+						<tr><td>性别</td><td>${teacher.sex}</td><td>联系电话</td><td>${teacher.telephone}</td></tr>
+						<tr><td>邮箱</td><td colspan="3">${teacher.email}</td></tr>					
 						</table>
 						<%-----------------%>
 					</div>

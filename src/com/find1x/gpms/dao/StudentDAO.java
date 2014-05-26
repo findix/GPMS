@@ -15,6 +15,12 @@ public class StudentDAO {
 		return list;
 	}
 
+	public static Student getStudentInfo(String no) {
+		Student student= MongoDBUtil.getDatastore()
+				.find(Student.class).filter("no", no).get();
+		return student;
+	}
+	
 	public static ObjectId addStudent(String no, String name,
 			String sex, String classno, String department,
 			String specialty,String telephone,String email) {

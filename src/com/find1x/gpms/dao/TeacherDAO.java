@@ -3,7 +3,6 @@ package com.find1x.gpms.dao;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-
 import com.find1x.gpms.pojos.Teacher;
 import com.find1x.gpms.pojos.User;
 import com.find1x.gpms.util.MongoDBUtil;
@@ -21,6 +20,12 @@ public class TeacherDAO {
 		return list;
 	}
 
+	public static Teacher getTeacherInfo(String no) {
+		Teacher teacher= MongoDBUtil.getDatastore()
+				.find(Teacher.class).filter("no", no).get();
+		return teacher;
+	}
+	
 	public static ObjectId addTeacher(String no, String name,
 			String sex, String department, String telephone,String email) {
 		try {
