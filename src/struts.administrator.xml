@@ -10,19 +10,19 @@
 		<!-- Pages -->
 		<action name="admin">
 			<result>
-				jsp/administrator/Admin.jsp
+				jsp/administrator/admin.jsp
 			</result>
 		</action>
 
 		<action name="adminSys">
 			<result>
-				jsp/administrator/AdminSys.jsp
+				jsp/administrator/adminSys.jsp
 			</result>
 		</action>
 
 		<action name="adminTeacher">
 			<result>
-				jsp/administrator/AdminTeacher.jsp
+				jsp/administrator/adminTeacher.jsp
 			</result>
 		</action>
 
@@ -34,7 +34,7 @@
 
 		<action name="adminStudent">
 			<result>
-				jsp/administrator/AdminStudent.jsp
+				jsp/administrator/adminStudent.jsp
 			</result>
 		</action>
 
