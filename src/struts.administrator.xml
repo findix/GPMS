@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="administrator" namespace="/" extends="struts-default">
+		<default-action-ref name="index" />
+
+		<!-- Pages -->
+		<action name="admin">
+			<result>
+				jsp/administrator/Admin.jsp
+			</result>
+		</action>
+
+		<action name="adminSys">
+			<result>
+				jsp/administrator/AdminSys.jsp
+			</result>
+		</action>
+
+		<action name="adminTeacher">
+			<result>
+				jsp/administrator/AdminTeacher.jsp
+			</result>
+		</action>
+
+		<action name="addTeacher">
+			<result>
+				jsp/administrator/addTeacher.jsp
+			</result>
+		</action>
+
+		<action name="adminStudent">
+			<result>
+				jsp/administrator/AdminStudent.jsp
+			</result>
+		</action>
+
+		<action name="addStudent">
+			<result>
+				jsp/administrator/addStudent.jsp
+			</result>
+		</action>
+
+		<!-- actions -->
+
+	</package>
+</struts>

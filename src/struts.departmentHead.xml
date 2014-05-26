@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="administrator" namespace="/" extends="struts-default">
+		<default-action-ref name="index" />
+
+		<!-- Pages -->
+		<action name="departmentHead">
+			<result>
+				jsp/departmentHead/departmentHead.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadInfo">
+			<result>
+				jsp/departmentHead/departmentHeadInfo.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadTeacher">
+			<result>
+				jsp/departmentHead/departmentHeadTeacher.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadTeacherDetail">
+			<result>
+				jsp/departmentHead/departmentHeadTeacherDetail.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadStudent">
+			<result>
+				jsp/departmentHead/departmentHeadStudent.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadStudentDetail">
+			<result>
+				jsp/departmentHead/departmentHeadStudentDetail.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadStudentGrade">
+			<result>
+				jsp/departmentHead/departmentHeadStudentGrade.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadSubjectDetail">
+			<result>
+				jsp/departmentHead/departmentHeadSubjectDetail.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadSubjectManage">
+			<result>
+				jsp/departmentHead/departmentHeadSubjectManage.jsp
+			</result>
+		</action>
+
+		<action name="departmentHeadGroup">
+			<result>
+				jsp/departmentHead/departmentHeadGroup.jsp
+			</result>
+		</action>
+
+		<!-- actions -->
+
+	</package>
+</struts>

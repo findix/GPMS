@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="administrator" namespace="/" extends="struts-default">
+		<default-action-ref name="index" />
+		
+		<!-- Pages -->
+		<action name="teacher">
+			<result>
+				jsp/teacher/teacher.jsp
+			</result>
+		</action>
+		<action name="teacherSubject">
+			<result>
+				jsp/teacher/teacherSubject.jsp
+			</result>
+		</action>
+		
+		<!-- actions -->		
+		<action name="UploadIssue" class="com.find1x.gpms.action.UploadIssueAction">
+			<result>
+				jsp/teacher/teacherSubjectManage.jsp
+			</result>
+		</action>
+		<action name="ChangeIssue" class="com.find1x.gpms.action.ChangeIssueAction">
+			<result>
+				jsp/teacher/teacherSubjectManage.jsp
+			</result>
+		</action>
+		<action name="DeleteIssue" class="com.find1x.gpms.action.DeleteIssueAction">
+			<result>
+				jsp/teacher/teacherSubjectManage.jsp
+			</result>
+		</action>
+		<action name="teacherSubjectManage"
+			class="com.find1x.gpms.action.teacherSubjectManageAction">
+			<result>
+				jsp/teacher/teacherSubjectManage.jsp
+			</result>
+		</action>
+		<action name="teacherChangeSubject"
+			class="com.find1x.gpms.action.teacherChangeSubjectAction">
+			<result>
+				jsp/teacher/teacherChangeSubject.jsp
+			</result>
+		</action>
+		<action name="teacherInfo" class="com.find1x.gpms.action.teacherInfoAction">
+			<result>
+				jsp/teacher/teacherInfo.jsp
+			</result>
+		</action>
+		<action name="teacherStudent" class="com.find1x.gpms.action.teacherStudentAction">
+			<result>
+				jsp/teacher/teacherStudent.jsp
+			</result>
+		</action>
+		<action name="teacherStudentGrade" class="com.find1x.gpms.action.teacherStudentGradeAction">
+			<result>
+				jsp/teacher/teacherStudentGrade.jsp
+			</result>
+		</action>
+		<action name="teacherStudentDetail"
+			class="com.find1x.gpms.action.teacherStudentDetailAction">
+			<result>
+				jsp/teacher/teacherStudentDetail.jsp
+			</result>
+		</action>
+
+		<action name="teacherUploadFiles" class="com.find1x.gpms.action.teacherUploadFilesAction">
+			<result>
+				jsp/teacher/teacherUploadFiles.jsp
+			</result>
+		</action>
+	</package>
+</struts>

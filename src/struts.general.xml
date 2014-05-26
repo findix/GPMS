@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="general" namespace="/" extends="struts-default">
+	    <default-action-ref name="index" />
+
+		<!-- Pages -->
+		<action name="index">
+			<result>
+				jsp/index.jsp
+			</result>
+		</action>
+		<action name="login">
+			<result>
+				jsp/login.jsp
+			</result>
+		</action>
+		<action name="changePasswd">
+			<result>
+				jsp/changePasswd.jsp
+			</result>
+		</action>
+		<action name="template">
+			<result>
+				jsp/template/page.jsp
+			</result>
+		</action>
+
+		<!-- actions -->
+		<action name="logout" class="com.find1x.gpms.action.LogoutAction">
+			<result type="redirect">
+				/
+			</result>
+		</action>
+		<action name="Login" class="com.find1x.gpms.action.LoginAction">
+			<result type="redirect">
+				/
+			</result>
+			<result name="error" type="redirect">
+				/?status=error
+			</result>
+		</action>
+		<action name="ChangePasswd" class="com.find1x.gpms.action.ChangePasswdAction">
+			<result>
+				jsp/result.jsp
+			</result>
+			<result name="error" type="redirect">
+				jsp/changePasswd?status=error
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="student" namespace="/" extends="struts-default">
+		<default-action-ref name="index" />
+
+		<!-- Pages -->
+		<action name="student">
+			<result>
+				jsp/student/student.jsp
+			</result>
+		</action>
+
+		<!-- actions -->
+		<action name="studentInfo" class="com.find1x.gpms.action.studentInfoAction">
+			<result>
+				jsp/student/studentInfo.jsp
+			</result>
+		</action>
+
+		<action name="studentTeacher" class="com.find1x.gpms.action.studentTeacherAction">
+			<result>
+				jsp/student/studentTeacher.jsp
+			</result>
+		</action>
+		<action name="studentGrade" class="com.find1x.gpms.action.studentGradeAction">
+			<result>
+				jsp/student/studentGrade.jsp
+			</result>
+		</action>
+	</package>
+</struts>

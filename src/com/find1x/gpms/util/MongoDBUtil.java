@@ -22,7 +22,7 @@ public class MongoDBUtil {
 
 	private MongoDBUtil() {
 		try {
-			mongo = new Mongo("localhost", 27017);
+			mongo = new Mongo("rank.litpo.com", 27017);
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
