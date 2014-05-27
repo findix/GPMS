@@ -34,7 +34,7 @@ public class IssueDAO {
 	}
 	
 	public static boolean addIssue(String title, String info,
-			String requirement, String specialty, String total) {
+			String requirement, String specialty, String total, String teacher) {
 		try {
 			Issue issue=new Issue();
 			issue.setTitle(title);
@@ -42,6 +42,7 @@ public class IssueDAO {
 			issue.setRequirement(requirement);
 			issue.setSpecialty(specialty);
 			issue.setTotal(total);
+			issue.setTeacher(teacher);
 			Datastore ds = MongoDBUtil.getDatastore();
 			ds.save(issue);
 			return true;
@@ -52,13 +53,13 @@ public class IssueDAO {
 	}
 	
 	public static boolean changeIssue(String _id,String title, String info,
-			String requirement, String specialty, String total) {
+			String requirement, String specialty, String total ,String teacher) {
 		try {
 			Datastore ds = MongoDBUtil.getDatastore();
 			ds.update(ds.find(Issue.class).filter("_id", new ObjectId(_id)),
 					ds.createUpdateOperations(Issue.class)
 					.set("title", title).set("info", info).set("requirement", requirement)
-					.set("specialty", specialty).set("total", total));
+					.set("specialty", specialty).set("total", total).set("teacher", teacher));
 					
 			return true;
 		} catch (Exception e) {
