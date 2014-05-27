@@ -31,5 +31,10 @@
 				jsp/student/studentGrade.jsp
 			</result>
 		</action>
+		<action name="SelectSubject" class="com.find1x.gpms.action.SelectSubjectAction">
+			<result>
+				jsp/student/selectSubject.jsp
+			</result>
+		</action>
 	</package>
 </struts>
