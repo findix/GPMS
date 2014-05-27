@@ -43,8 +43,18 @@
 				jsp/administrator/addStudent.jsp
 			</result>
 		</action>
-
+		
 		<!-- actions -->
-
+		<action name="releaseNotice" class="com.find1x.gpms.action.releaseNoticeAction">
+			<result>
+				jsp/administrator/releaseNotice.jsp
+			</result>
+		</action>
+		
+		<action name="gradeManage" class="com.find1x.gpms.action.gradeManageAction">
+			<result>
+				jsp/administrator/gradeManage.jsp
+			</result>
+		</action>
 	</package>
 </struts>

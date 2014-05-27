@@ -67,8 +67,12 @@
 				jsp/departmentHead/departmentHeadGroup.jsp
 			</result>
 		</action>
-
+		
 		<!-- actions -->
-
+		<action name="departmentHeadStudentGrade" class="com.find1x.gpms.action.departmentHeadStudentGradeAction">
+			<result>
+				jsp/administrator/departmentHeadStudentGrade.jsp
+			</result>
+		</action>
 	</package>
 </struts>
