@@ -4,7 +4,7 @@
 <div class="bs-sidebar hidden-print affix-top">
 	<ul class="nav bs-sidenav">
 		<li><a href="studentInfo">个人信息</a></li>
-		<li><a href="#grid">选题</a></li>
+		<li><a href="selectSubject">选题</a></li>
 		<li><a href="studentTeacher">导师信息</a></li>
 		<li><a href="studentGrade">查看成绩</a></li>
 	</ul>
