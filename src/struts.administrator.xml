@@ -43,7 +43,19 @@
 				jsp/administrator/addStudent.jsp
 			</result>
 		</action>
-
+		
+		<action name="gradeManage">
+			<result>
+				jsp/administrator/gradeManage.jsp
+			</result>
+		</action>
+		
+		<action name="releaseNotice">
+			<result>
+				jsp/administrator/releaseNotice.jsp
+			</result>
+		</action>
+		
 		<!-- actions -->
 		<action name="UploadStudentInfo" class="com.find1x.gpms.action.UploadStudentInfoAction">
 			<result type="redirect">

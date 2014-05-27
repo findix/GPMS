@@ -60,15 +60,15 @@
 							onclick="window.location='addStudent'">增加记录</button>
 						<table class="table table-bordered" style="text-align: center">
 							<tr>
-								<td>学号</td>
-								<td>姓名</td>
-								<td>性别</td>
-								<td>班级</td>
-								<td>学院</td>
-								<td>专业</td>
-								<td>电话</td>
-								<td>邮箱</td>
-								<td colspan="2">其他</td>
+								<th>学号</th>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>班级</th>
+								<th>学院</th>
+								<th>专业</th>
+								<th>电话</th>
+								<th>邮箱</th>
+								<th colspan="2">其他</th>
 							</tr>
 							<tr>
 								<td></td>
