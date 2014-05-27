@@ -32,7 +32,7 @@
 		<div id="main" class="clearfix">
 			<%-- 此行控制是否该页面未登录无法访问 --%>
 			<%@ include file="/jsp/authentication.jsp"%>
-			
+
 			<%-- header导航条--%>
 			<%@ include file="/jsp/nav.jsp"%>
 
@@ -43,12 +43,46 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-					<div>导入学生信息</div><br/>
-					<input type="file" style="float: left"/><button style="float: right" onclick="window.location='addStudent'">增加记录</button>
-					<table class="table table-bordered" style="text-align: center">
-					<tr><td>学号</td><td>姓名</td><td>性别</td><td>班级</td><td>学院</td><td>专业</td><td>电话</td><td>邮箱</td><td colspan="2">其他</td></tr>
-					<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><button>删除记录</button></td><td><button>重置密码</button></td></tr>				
-					</table>
+						<div>导入学生信息</div>
+						<br />
+						<div class="form-group">
+							<form action="UploadStudentInfo" method="POST"
+								enctype="multipart/form-data">
+								<span class="btn btn-default btn-file"> <input
+									type="file" name="student_info" />
+								</span> <input class="btn" type="submit" />
+							</form>
+							<p class="help-block">
+								<a href="static/student_info.xls">点击下载学生信息模板</a>
+							</p>
+						</div>
+						<button class="btn" style="float: right"
+							onclick="window.location='addStudent'">增加记录</button>
+						<table class="table table-bordered" style="text-align: center">
+							<tr>
+								<td>学号</td>
+								<td>姓名</td>
+								<td>性别</td>
+								<td>班级</td>
+								<td>学院</td>
+								<td>专业</td>
+								<td>电话</td>
+								<td>邮箱</td>
+								<td colspan="2">其他</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><button class="btn">删除记录</button></td>
+								<td><button class="btn">重置密码</button></td>
+							</tr>
+						</table>
 						<%-----------------%>
 					</div>
 				</div>
