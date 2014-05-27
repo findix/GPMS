@@ -27,7 +27,7 @@ public class TeacherDAO {
 	}
 	
 	public static ObjectId addTeacher(String no, String name,
-			String sex, String department, String telephone,String email) {
+			String sex, String department, String telephone,String email,String postion) {
 		try {
 			Teacher teacher=new Teacher();
 			teacher.setNo(no);
@@ -35,6 +35,7 @@ public class TeacherDAO {
 			teacher.setSex(sex);
 			teacher.setTelephone(telephone);
 			teacher.setEmail(email);
+			teacher.setPostion(postion);
 			MongoDBUtil.getDatastore().save(teacher);
 			return MongoDBUtil.getDatastore().find(Teacher.class)
 					.filter("no", no).get().get_id();
@@ -44,12 +45,15 @@ public class TeacherDAO {
 		}
 	}
 	
-	public static boolean createUser(ObjectId _id,String username,int type){
+	public static boolean createUser(ObjectId _id,String username,String postion){
 		try {
 			User user=new User();
 			user.setRefId(_id);
 			user.setUsername(username);
-			user.setType(type);
+			if(postion.equals("教师"))user.setType(1);
+			else if(postion.equals("教务员"))user.setType(2);
+			else if(postion.equals("系主任"))user.setType(3);
+			else user.setType(1);
 			user.setPassword("123456");
 			MongoDBUtil.getDatastore().save(user);
 			return true;

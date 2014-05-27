@@ -51,7 +51,7 @@ public class ChangeIssueAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		if (IssueDAO.changeIssue(_id,issue.getTitle(), issue.getInfo(), issue.getRequirement(),
-				issue.getSpecialty(), issue.getTotal())) {
+				issue.getSpecialty(), issue.getTotal(), issue.getTeacher())) {
 			issues = IssueDAO.getList();
 			return SUCCESS;
 		} else {

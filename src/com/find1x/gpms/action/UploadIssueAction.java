@@ -42,7 +42,7 @@ public class UploadIssueAction extends ActionSupport{
 	@Override
 	public String execute() throws Exception {
 		if (IssueDAO.addIssue(issue.getTitle(), issue.getInfo(), issue.getRequirement(),
-				issue.getSpecialty(), issue.getTotal())) {
+				issue.getSpecialty(), issue.getTotal(),(String)session.getAttribute("username"))) {
 			issues = IssueDAO.getList();
 			return SUCCESS;
 		} else {

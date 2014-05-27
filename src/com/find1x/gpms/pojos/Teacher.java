@@ -14,7 +14,14 @@ public class Teacher {
 	private String department;
 	private String telephone;
 	private String email;
+	private String postion;
 	
+	public String getPostion() {
+		return postion;
+	}
+	public void setPostion(String postion) {
+		this.postion = postion;
+	}
 	public ObjectId get_id() {
 		return _id;
 	}

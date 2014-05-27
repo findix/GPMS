@@ -87,7 +87,7 @@ public class ExcelPOI {
 		String department;
 		String telephone;
 		String email;
-		String type;
+		String postion;
 		
 		try {
 			HSSFRow row;
@@ -110,14 +110,10 @@ public class ExcelPOI {
 				department = getStringCellValue(row.getCell((short) 3)).trim();
 				telephone = getStringCellValue(row.getCell((short) 4)).trim();
 				email = getStringCellValue(row.getCell((short) 5)).trim();
-				type = getStringCellValue(row.getCell((short) 6)).trim();
-				int typenum;
-				if(type.equals("老师"))typenum=1;
-				else if(type.equals("教务员"))typenum=2;
-				else if(type.equals("系主任"))typenum=3;
-				else typenum=1;
+				postion = getStringCellValue(row.getCell((short) 6)).trim();
+
 				TeacherDAO.createUser(TeacherDAO.addTeacher
-						(no, name, sex, department, telephone, email), no ,typenum);
+						(no, name, sex, department, telephone, email, postion), no ,postion);
 			}
 			return true;
 		} catch (IOException e) {
