@@ -55,5 +55,15 @@
 				adminTeacher
 			</result>
 		</action>
+				<action name="ReleaseNotice" class="com.find1x.gpms.action.ReleaseNoticeAction">
+			<result>
+				jsp/administrator/releaseNotice.jsp
+			</result>
+		</action>
+		<action name="GradeManage" class="com.find1x.gpms.action.GradeManageAction">
+			<result>
+				jsp/administrator/gradeManage.jsp
+			</result>
+		</action>
 	</package>
 </struts>

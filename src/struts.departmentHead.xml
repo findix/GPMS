@@ -69,7 +69,7 @@
 		</action>
 		
 		<!-- actions -->
-		<action name="departmentHeadStudentGrade" class="com.find1x.gpms.action.departmentHeadStudentGradeAction">
+		<action name="DepartmentHeadStudentGrade" class="com.find1x.gpms.action.DepartmentHeadStudentGradeAction">
 			<result>
 				jsp/administrator/departmentHeadStudentGrade.jsp
 			</result>
