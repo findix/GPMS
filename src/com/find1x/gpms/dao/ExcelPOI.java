@@ -1,18 +1,17 @@
 package com.find1x.gpms.dao;
 
+import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+
 
 /**
  * 操作Excel表格的功能类
@@ -37,7 +36,7 @@ public class ExcelPOI {
 	 * @param InputStream
 	 * @return Map 包含单元格数据内容的Map对象
 	 */
-	public static boolean readStudentContent(String url) {
+	public static boolean readStudentContent(File file) {
 		String name;
 		String sex;
 		String no;
@@ -49,7 +48,7 @@ public class ExcelPOI {
 		String teacher;
 		try {
 			HSSFRow row;
-			InputStream is = new FileInputStream(url);
+			InputStream is = new FileInputStream(file);
 			POIFSFileSystem fs = new POIFSFileSystem(is);
 			HSSFWorkbook wb = new HSSFWorkbook(fs);
 			HSSFSheet sheet = wb.getSheetAt(0);
@@ -70,8 +69,10 @@ public class ExcelPOI {
 				specialty = getStringCellValue(row.getCell((short) 5)).trim();
 				telephone = getStringCellValue(row.getCell((short) 6)).trim();
 				email = getStringCellValue(row.getCell((short) 7)).trim();
-				StudentDAO.createUser(StudentDAO.addStudent
+				if(!StudentDAO.existStudent(no)){
+					StudentDAO.createUser(StudentDAO.addStudent
 						(no, name, sex, classno, department, specialty, telephone, email), no);
+				}
 			}
 			return true;
 		} catch (IOException e) {
@@ -80,7 +81,7 @@ public class ExcelPOI {
 		return false;
 	}
 
-	public boolean readTeacherContent(String url) {
+	public static boolean readTeacherContent(File file) {
 		String name;
 		String sex;
 		String no;
@@ -91,7 +92,7 @@ public class ExcelPOI {
 		
 		try {
 			HSSFRow row;
-			InputStream is = new FileInputStream(url);
+			InputStream is = new FileInputStream(file);
 			POIFSFileSystem fs = new POIFSFileSystem(is);
 			HSSFWorkbook wb = new HSSFWorkbook(fs);
 			HSSFSheet sheet = wb.getSheetAt(0);
@@ -111,9 +112,10 @@ public class ExcelPOI {
 				telephone = getStringCellValue(row.getCell((short) 4)).trim();
 				email = getStringCellValue(row.getCell((short) 5)).trim();
 				postion = getStringCellValue(row.getCell((short) 6)).trim();
-
+				if(!TeacherDAO.existTeacher(no)){
 				TeacherDAO.createUser(TeacherDAO.addTeacher
 						(no, name, sex, department, telephone, email, postion), no ,postion);
+				}
 			}
 			return true;
 		} catch (IOException e) {

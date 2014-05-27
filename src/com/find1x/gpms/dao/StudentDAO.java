@@ -56,4 +56,12 @@ public class StudentDAO {
 			return false;
 		}
 	}
+	
+	public static boolean  existStudent(String no){
+		if(MongoDBUtil.getDatastore()
+				.find(Student.class).filter("no", no).get()==null)
+			return false;
+		else
+			return true;
+	}
 }

@@ -3,6 +3,8 @@ package com.find1x.gpms.dao;
 import java.util.List;
 
 import org.bson.types.ObjectId;
+
+import com.find1x.gpms.pojos.Student;
 import com.find1x.gpms.pojos.Teacher;
 import com.find1x.gpms.pojos.User;
 import com.find1x.gpms.util.MongoDBUtil;
@@ -33,6 +35,7 @@ public class TeacherDAO {
 			teacher.setNo(no);
 			teacher.setName(name);
 			teacher.setSex(sex);
+			teacher.setDepartment(department);
 			teacher.setTelephone(telephone);
 			teacher.setEmail(email);
 			teacher.setPostion(postion);
@@ -61,5 +64,13 @@ public class TeacherDAO {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	public static boolean  existTeacher(String no){
+		if(MongoDBUtil.getDatastore()
+				.find(Teacher.class).filter("no", no).get()==null)
+			return false;
+		else
+			return true;
 	}
 }

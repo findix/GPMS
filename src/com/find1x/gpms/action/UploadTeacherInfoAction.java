@@ -1,6 +1,7 @@
 package com.find1x.gpms.action;
 
 import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
+import com.find1x.gpms.dao.ExcelPOI;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -40,6 +42,7 @@ public class UploadTeacherInfoAction extends ActionSupport {
 			FileUtils.copyFile(teacher_info, savefile);
 			ActionContext.getContext().put("message", "文件上传成功");
 		}
+		ExcelPOI.readTeacherContent(teacher_info);
 		return SUCCESS;
 	}
 
