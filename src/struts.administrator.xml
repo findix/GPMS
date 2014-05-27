@@ -45,15 +45,14 @@
 		</action>
 		
 		<!-- actions -->
-		<action name="releaseNotice" class="com.find1x.gpms.action.releaseNoticeAction">
-			<result>
-				jsp/administrator/releaseNotice.jsp
+		<action name="UploadStudentInfo" class="com.find1x.gpms.action.UploadStudentInfoAction">
+			<result type="redirect">
+				adminStudent
 			</result>
 		</action>
-		
-		<action name="gradeManage" class="com.find1x.gpms.action.gradeManageAction">
-			<result>
-				jsp/administrator/gradeManage.jsp
+		<action name="UploadTeacherInfo" class="com.find1x.gpms.action.UploadTeacherInfoAction">
+			<result type="redirect">
+				adminTeacher
 			</result>
 		</action>
 	</package>
