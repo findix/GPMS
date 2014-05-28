@@ -30,6 +30,7 @@ public class StudentDAO {
 			student.setName(name);
 			student.setSex(sex);
 			student.setClassno(classno);
+			student.setDepartment(department);
 			student.setSpecialty(specialty);
 			student.setTelephone(telephone);
 			student.setEmail(email);
