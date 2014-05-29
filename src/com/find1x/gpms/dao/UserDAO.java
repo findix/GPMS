@@ -28,17 +28,11 @@ public class UserDAO {
 					.filter("_id", refId).get();
 			return (student == null ? username : student.getName());
 		case 1:
+		case 2:
+		case 3:
 			Teacher teacher = MongoDBUtil.getDatastore().find(Teacher.class)
 					.filter("_id", refId).get();
 			return (teacher == null ? username : teacher.getName());
-		case 2:
-			Administrator administrator = MongoDBUtil.getDatastore().find(Administrator.class)
-					.filter("_id", refId).get();
-			return (administrator == null ? username : administrator.getName());
-		case 3:
-			DepartmentHead departmentHead = MongoDBUtil.getDatastore().find(DepartmentHead.class)
-					.filter("_id", refId).get();
-			return (departmentHead == null ? username : departmentHead.getName());
 		}
 		return null;
 	}

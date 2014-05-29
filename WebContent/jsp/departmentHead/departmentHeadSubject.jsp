@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<%@page
-	import="com.find1x.gpms.dao.IssueDAO,com.find1x.gpms.pojos.Issue,java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -33,8 +30,8 @@
 <body>
 	<div id="wrap">
 		<div id="main" class="clearfix">
-			<%-- 此行控制是否该页面未登录无法访问 --%>
-			<%@ include file="/jsp/authentication.jsp"%>
+			<%-- 此行控制是否该页面未登录无法访问 --%>  
+		<%@ include file="/jsp/authentication.jsp"%>
 
 			<%-- header导航条--%>
 			<%@ include file="/jsp/nav.jsp"%>
@@ -46,34 +43,19 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<%
-							List<Issue> list = IssueDAO.getList();
-						%>
-						<table class="table table-bordered">
-							<tr>
-								<th>题目名称</th>
-								<th>题目信息</th>
-								<th>题目需求</th>
-								<th>第一志愿</th>
-								<th>第二志愿</th>
-								<th>第三志愿</th>
-							</tr>
-							<%
-								for (Issue i : list) {
-							%>
-							<tr>
-								<td><%=i.getTitle()%></td>
-								<td><%=i.getInfo()%></td>
-								<td><%=i.getRequirement()%></td>
-								<td><input type="radio" name="subject1" /></td>
-								<td><input type="radio" name="subject2" /></td>
-								<td><input type="radio" name="subject3" /></td>
-								<%
-									}
-								%>
-							</tr>
-						</table>
-
+						<form action="UploadIssue" method="post" role="form">
+						题目名称:<input type="text" class="form-control" name="issue.title" /><br/><br/>
+						题目简介:<br/><TEXTAREA name="issue.info" class="form-control" rows="3"></TEXTAREA><br/>
+						题目要求:<br/><TEXTAREA name="issue.requirement" class="form-control" rows="5"></TEXTAREA><br/><br/>
+						面向专业:&nbsp;
+						<select name="issue.specialty">
+						<option>软件工程</option>
+						<option>信息安全</option>
+						<option>计算机科学与技术</option>
+						</select><br/><br/>
+						可选人数：<input type="text" name="issue.total"/>  <br/>
+						<div class="submit"><input type="submit" value="提交" />	</div>
+						</form>
 						<%-----------------%>
 					</div>
 				</div>

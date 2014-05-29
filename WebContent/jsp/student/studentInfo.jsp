@@ -43,12 +43,32 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-					<table class="table table-bordered">
-						<tr><td>学号</td><td>${student.no}</td><td>姓名</td><td>${student.name}</td></tr>
-						<tr><td>班级</td><td>${student.classno}</td><td>性别</td><td>${student.sex}</td></tr>
-						<tr><td>学院</td><td>${student.department}</td><td>专业</td><td>${student.specialty}</td></tr>
-						<tr><td>联系方式</td><td>${student.telephone}</td><td>邮箱</td><td>${student.email}</td></tr>		
-					</table>
+						<table class="table table-bordered">
+							<tr>
+								<td>学号</td>
+								<td>${student.no}</td>
+								<td>姓名</td>
+								<td>${student.name}</td>
+							</tr>
+							<tr>
+								<td>班级</td>
+								<td>${student.classno}</td>
+								<td>性别</td>
+								<td>${student.sex}</td>
+							</tr>
+							<tr>
+								<td>学院</td>
+								<td>${student.department}</td>
+								<td>专业</td>
+								<td>${student.specialty}</td>
+							</tr>
+							<tr>
+								<td>联系方式</td>
+								<td>${student.telephone}</td>
+								<td>邮箱</td>
+								<td>${student.email}</td>
+							</tr>
+						</table>
 						<%-----------------%>
 					</div>
 				</div>

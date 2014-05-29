@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@page
+	import="com.find1x.gpms.dao.StudentDAO,com.find1x.gpms.pojos.Student,java.util.List"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -43,11 +45,40 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-					<table class="table table-bordered">
-					<tr align="center"><td>姓名</td><td>学号</td><td>专业</td><td colspan="2">其他</td></tr>
-					<tr><td></td><td></td><td></td><td><button type="button" class="btn btn-primary" onclick="window.location='departmentHeadStudentDetail'">详细信息</button></td><td><button type="button" class="btn btn-primary" onclick="window.location='departmentHeadStudentGrade'">查看成绩</button></td></tr>
-					<tr><td></td><td></td><td></td><td></td><td></td></tr>
-					</table>
+						<table class="table table-bordered">
+							<tr align="center">
+								<th>学号</th>
+								<th>班级</th>
+								<th>姓名</th>
+								<th>学院</th>
+								<th>专业</th>
+								<th>性别</th>
+								<th>联系电话</th>
+								<th>邮箱</th>
+							</tr>
+							<%
+								List<Student> list = StudentDAO.getList();
+							%>
+							<%
+								for (Student s : list) {
+							%>
+							<tr>
+								<td><%=s.getNo()%></td>
+								<td><%=s.getClassno()%></td>
+								<td><%=s.getName()%></td>
+								<td><%=s.getDepartment()%></td>
+								<td><%=s.getSpecialty()%></td>
+								<td><%=s.getSex()%></td>
+								<td><%=s.getTelephone()%></td>
+								<td><%=s.getEmail()%></td>
+								<td><button type="button" class="btn btn-primary"
+										onclick="window.location='departmentHeadStudentGrade'">查看成绩</button></td>
+							<tr>
+								<%
+									}
+								%>
+							
+						</table>
 						<%-----------------%>
 					</div>
 				</div>

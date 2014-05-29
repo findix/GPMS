@@ -49,7 +49,11 @@
 				jsp/departmentHead/departmentHeadStudentGrade.jsp
 			</result>
 		</action>
-
+		<action name="departmentHeadSubjectDetail">
+			<result>
+				jsp/departmentHead/departmentHeadSubject.jsp
+			</result>
+		</action>
 		<action name="departmentHeadSubjectDetail">
 			<result>
 				jsp/departmentHead/departmentHeadSubjectDetail.jsp
@@ -67,9 +71,10 @@
 				jsp/departmentHead/departmentHeadGroup.jsp
 			</result>
 		</action>
-		
+
 		<!-- actions -->
-		<action name="DepartmentHeadStudentGrade" class="com.find1x.gpms.action.DepartmentHeadStudentGradeAction">
+		<action name="DepartmentHeadStudentGrade"
+			class="com.find1x.gpms.action.DepartmentHeadStudentGradeAction">
 			<result>
 				jsp/administrator/departmentHeadStudentGrade.jsp
 			</result>

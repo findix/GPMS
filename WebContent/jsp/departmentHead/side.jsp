@@ -6,6 +6,7 @@
 		<li><a href="departmentHeadInfo">个人信息</a></li>
 		<li><a href="departmentHeadTeacher">教师管理</a></li>
 		<li><a href="departmentHeadStudent">学生管理</a></li>
+		<li><a href="teacherSubject">上传题目</a></li>
 		<li><a href="departmentHeadSubjectManage">选题管理</a></li>
 		<li><a href="StudentGradeManage">成绩管理</a></li>
 	</ul>

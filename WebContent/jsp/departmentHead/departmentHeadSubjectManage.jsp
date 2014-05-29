@@ -30,8 +30,8 @@
 <body>
 	<div id="wrap">
 		<div id="main" class="clearfix">
-			<%-- 此行控制是否该页面未登录无法访问 --%>  
-		<%@ include file="/jsp/authentication.jsp"%>
+			<%-- 此行控制是否该页面未登录无法访问 --%>
+			<%@ include file="/jsp/authentication.jsp"%>
 
 			<%-- header导航条--%>
 			<%@ include file="/jsp/nav.jsp"%>
@@ -43,10 +43,29 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
+						<%
+							List<Issue> list = IssueDAO.getList();
+						%>
 						<table class="table table-bordered">
-						<tr><td>题目名称</td><td>题目简介</td><td>面向专业</td><td>其他</td></tr>
-						<tr><td></td><td></td><td></td><td><button type="button" class="btn btn-success" onclick="window.location='departmentHeadSubjectDetail'">详细信息</button></td></tr>
-						<tr><td></td><td></td><td></td><td></td></tr>
+							<tr>
+								<th>题目名称</th>
+								<th>题目信息</th>
+								<th>题目需求</th>
+								<th>第一志愿</th>
+								<th>第二志愿</th>
+								<th>第三志愿</th>
+							</tr>
+							<%
+								for (Issue i : list) {
+							%>
+							<tr>
+								<td><%=i.getTitle()%></td>
+								<td><%=i.getInfo()%></td>
+								<td><%=i.getRequirement()%></td>
+								<%
+									}
+								%>
+							</tr>
 						</table>
 						<%-----------------%>
 					</div>
