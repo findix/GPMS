@@ -17,6 +17,6 @@
 			href="http://www.oracle.com/technetwork/java/javaee/overview/‎"
 			target="_blank" title="Java EE"> Java EE </a> | <a
 			href="https://www.mongodb.org/‎" target="_blank" title="MongoDB">MongoDB</a>
-		| <a href="struts.apache.org/" target="_blank" title="Struts">Struts</a>
+		| <a href="http://struts.apache.org/" target="_blank" title="Struts">Struts</a>
 	</p>
 </footer>
