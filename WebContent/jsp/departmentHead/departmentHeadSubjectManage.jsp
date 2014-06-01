@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page
-	import="com.find1x.gpms.dao.IssueDAO,com.find1x.gpms.pojos.Issue,java.util.List"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -45,30 +44,39 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<%
-							List<Issue> list = IssueDAO.getList();
-						%>
 						<table class="table table-bordered">
 							<tr>
-								<th>题目名称</th>
-								<th>题目信息</th>
-								<th>题目需求</th>
-								<th>第一志愿</th>
-								<th>第二志愿</th>
-								<th>第三志愿</th>
+								<td>题目名称</td>
+								<td>题目简介</td>
+								<td>面向专业</td>
+								<td colspan="2">其他</td>
 							</tr>
-							<%
-								for (Issue i : list) {
-							%>
-							<tr>
-								<td><%=i.getTitle()%></td>
-								<td><%=i.getInfo()%></td>
-								<td><%=i.getRequirement()%></td>
-								<%
-									}
-								%>
-							</tr>
+							<s:iterator value="#request.issues" var="subject">
+								<tr>
+									<td>${subject.title}</td>
+									<td>${subject.info}</td>
+									<td>${subject.specialty}</td>
+									<td><button type="button" class="btn btn-success"
+											onclick='changeSubject("${subject._id}")'>修改</button></td>
+									<td><button type="button" class="btn btn-danger"
+											onclick='deleteSubject("${subject._id}")'>删除</button></td>
+								</tr>
+							</s:iterator>
 						</table>
+						<script>
+							function changeSubject(_id) {
+								window.location.href = ('teacherChangeSubject?_id='
+										+ _id + '');
+							}
+							function deleteSubject(_id) {
+								window.location.href = ('DeleteIssue?_id='
+										+ _id + '');
+							}
+						</script>
+						<div class="submit">
+							<button type="button" class="btn btn-success"
+								onclick="window.location='teacherSubject'">继续添加</button>
+						</div>
 						<%-----------------%>
 					</div>
 				</div>

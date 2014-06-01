@@ -76,7 +76,19 @@
 		<action name="DepartmentHeadStudentGrade"
 			class="com.find1x.gpms.action.DepartmentHeadStudentGradeAction">
 			<result>
-				jsp/administrator/departmentHeadStudentGrade.jsp
+				jsp/departmentHead/departmentHeadStudentGrade.jsp
+			</result>
+		</action>
+		
+		<action name="DepartmentHeadSubjectManage" class="com.find1x.gpms.action.teacherSubjectManageAction">
+			<result>
+				jsp/departmentHead/departmentHeadSubjectManage.jsp
+			</result>
+		</action>
+		
+		<action name="DepartmentChangeIssue" class="com.find1x.gpms.action.ChangeIssueAction">
+			<result>
+				jsp/departmentHead/departmentHeadSubjectManage.jsp
 			</result>
 		</action>
 	</package>

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.find1x.gpms.dao.IssueDAO;
+import com.find1x.gpms.dao.UserDAO;
 import com.find1x.gpms.pojos.Issue;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -52,7 +53,10 @@ public class ChangeIssueAction extends ActionSupport{
 	public String execute() throws Exception {
 		if (IssueDAO.changeIssue(_id,issue.getTitle(), issue.getInfo(), issue.getRequirement(),
 				issue.getSpecialty(), issue.getTotal(), issue.getTeacher())) {
-			issues = IssueDAO.getList((String)session.getAttribute("username"));
+			if(UserDAO.getType((String)session.getAttribute("username"))==3)
+				issues = IssueDAO.getList();
+			else
+				issues = IssueDAO.getList((String)session.getAttribute("username"));
 			return SUCCESS;
 		} else {
 			return ERROR;

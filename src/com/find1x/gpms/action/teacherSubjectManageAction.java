@@ -11,7 +11,6 @@ import org.apache.struts2.ServletActionContext;
 import com.find1x.gpms.dao.IssueDAO;
 import com.find1x.gpms.dao.UserDAO;
 import com.find1x.gpms.pojos.Issue;
-import com.find1x.gpms.pojos.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -38,7 +37,10 @@ public class teacherSubjectManageAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		issues = IssueDAO.getList((String)session.getAttribute("username"));
+		if(UserDAO.getType((String)session.getAttribute("username"))==3)
+			issues = IssueDAO.getList();
+		else
+			issues = IssueDAO.getList((String)session.getAttribute("username"));
 		return SUCCESS;
 	}
 

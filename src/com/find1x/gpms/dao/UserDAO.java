@@ -36,4 +36,9 @@ public class UserDAO {
 		}
 		return null;
 	}
+	
+	public static int getType(String username){
+		return MongoDBUtil.getDatastore()
+		.find(User.class).filter("username", username).get().getType();
+	}
 }
