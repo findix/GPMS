@@ -17,7 +17,14 @@ public class Student {
 	private String telephone;
 	private String email;
 	private String teacher;
+	private String issue;
 	
+	public String getIssue() {
+		return issue;
+	}
+	public void setIssue(String issue) {
+		this.issue = issue;
+	}
 	public String getTeacher() {
 		return teacher;
 	}

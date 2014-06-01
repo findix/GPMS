@@ -52,7 +52,7 @@ public class ChangeIssueAction extends ActionSupport{
 	public String execute() throws Exception {
 		if (IssueDAO.changeIssue(_id,issue.getTitle(), issue.getInfo(), issue.getRequirement(),
 				issue.getSpecialty(), issue.getTotal(), issue.getTeacher())) {
-			issues = IssueDAO.getList();
+			issues = IssueDAO.getList((String)session.getAttribute("username"));
 			return SUCCESS;
 		} else {
 			return ERROR;

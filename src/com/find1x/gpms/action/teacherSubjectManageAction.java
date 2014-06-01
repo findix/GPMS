@@ -38,7 +38,7 @@ public class teacherSubjectManageAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		issues = IssueDAO.getList();
+		issues = IssueDAO.getList((String)session.getAttribute("username"));
 		return SUCCESS;
 	}
 

@@ -14,7 +14,7 @@ public class Issue {
 	private String specialty;
 	private String total;
 	private String teacher;
-	private String[] student;
+	//private String[] student;
 	
 	public String getTeacher() {
 		return teacher;
@@ -58,10 +58,10 @@ public class Issue {
 	public void setTotal(String total) {
 		this.total = total;
 	}
-	public String[] getStudent() {
-		return student;
-	}
-	public void setStudent(String[] student) {
-		this.student = student;
-	}
+	//public String[] getStudent() {
+	//	return student;
+	//}
+	//public void setStudent(String[] student) {
+	//	this.student = student;
+	//}
 }

@@ -9,12 +9,12 @@ import com.find1x.gpms.util.MongoDBUtil;
 
 
 public class IssueDAO {
-	public static List<Issue> getList(String specialty) {
+	public static List<Issue> getList(String teacher) {
 		List<Issue> list = MongoDBUtil.getDatastore()
-				.find(Issue.class).filter("specialty", specialty).asList();
+				.find(Issue.class).filter("teacher", teacher).asList();
 		return list;
 	}
-
+	
 	public static List<Issue> getList() {
 		List<Issue> list = MongoDBUtil.getDatastore()
 				.find(Issue.class).asList();
