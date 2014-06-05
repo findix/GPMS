@@ -50,7 +50,7 @@
 						<%
 							List<Issue> list = IssueDAO.getList();
 						%>
-						<form action="SelectIssue" method="post">
+						<form action="SelectIssue" id="SelectIssue" method="post">
 							<table id="selectSuject" class="table table-bordered">
 								<tr>
 									<th>第一志愿</th>
@@ -203,6 +203,16 @@
 											document.getElementById("selectSuject").rows[4].cells[5].innerHTML = data.total;
 											document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.teacher;
 								},"json");
+							});
+							$(document).ready(function() {
+								$("#SelectIssue").submit(function(){
+									if($("#firstChoice").get(0).selectedIndex==$("#secondChoice").get(0).selectedIndex ||
+											$("#firstChoice").get(0).selectedIndex==$("#thirdChoice").get(0).selectedIndex ||
+											$("#thirdChoice").get(0).selectedIndex==$("#secondChoice").get(0).selectedIndex){
+										alert("选题不能重复");
+										return false;
+									}
+								});
 							});
 						</script>
 						<%-----------------%>
