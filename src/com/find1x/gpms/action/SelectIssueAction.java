@@ -1,18 +1,16 @@
 package com.find1x.gpms.action;
 
-import java.io.PrintWriter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.find1x.gpms.dao.IssueDAO;
+import com.find1x.gpms.dao.StudentDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class IssueInfoAction extends ActionSupport {
+public class SelectIssueAction extends ActionSupport {
 
 	ActionContext context = ActionContext.getContext();
 	HttpServletRequest request = (HttpServletRequest) context
@@ -22,6 +20,7 @@ public class IssueInfoAction extends ActionSupport {
 	HttpSession session = request.getSession();
 
 	private static final long serialVersionUID = 1L;
+	
 	private String firstChoice;
 	private String secondChoice;
 	private String thirdChoice;
@@ -52,17 +51,8 @@ public class IssueInfoAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		response.setCharacterEncoding("UTF-8");
-		PrintWriter out=response.getWriter();
-		if(firstChoice!=null){
-			out.println(IssueDAO.getIssueJson(firstChoice));
-		}else if(secondChoice!=null){
-			out.println(IssueDAO.getIssueJson(secondChoice));
-		}else if(thirdChoice!=null){
-			out.println(IssueDAO.getIssueJson(thirdChoice));
-		}
-		out.flush();
-		out.close();
+		StudentDAO.addSubject((String)session.getAttribute("username"), 
+				firstChoice, secondChoice, thirdChoice);
 		return SUCCESS;
 	}
 

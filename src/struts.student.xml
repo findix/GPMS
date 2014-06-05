@@ -13,7 +13,11 @@
 				jsp/student/student.jsp
 			</result>
 		</action>
-
+		<action name="selectSubject">
+			<result>
+				jsp/student/selectSubject.jsp
+			</result>
+		</action>
 		<!-- actions -->
 		<action name="studentInfo" class="com.find1x.gpms.action.studentInfoAction">
 			<result>
@@ -31,9 +35,9 @@
 				jsp/student/studentGrade.jsp
 			</result>
 		</action>
-		<action name="SelectSubject" class="com.find1x.gpms.action.SelectSubjectAction">
+		<action name="SelectIssue" class="com.find1x.gpms.action.SelectIssueAction">
 			<result>
-				jsp/student/selectSubject.jsp
+				jsp/student/student.jsp
 			</result>
 		</action>
 		<action name="IssueInfo" class="com.find1x.gpms.action.IssueInfoAction">

@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
 <meta http-equiv="Expires" content="0">
 <meta http-equiv="kiben" content="no-cache">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -48,12 +49,10 @@
 						<%-- 在注释之间添加代码 --%>
 						<%
 							List<Issue> list = IssueDAO.getList();
-																			request.setAttribute("subject",list);
 						%>
-						<form action="SelectIssue" method="post" role="form">
+						<form action="SelectIssue" method="post">
 							<table id="selectSuject" class="table table-bordered">
 								<tr>
-
 									<th>第一志愿</th>
 									<th><select id="firstChoice" name="firstChoice">
 											<%
@@ -130,7 +129,6 @@
 								<input type="submit" value="提交" />
 							</div>
 						</form>
-						<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
 						<script type="text/javascript">
 							$(function() {
 								$("#firstChoice").change(function() {
@@ -173,6 +171,38 @@
 												document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.teacher;
 									},"json");
 								});
+							});
+							$(document).ready(function(){
+								$("#firstChoice").get(0).selectedIndex = 0;
+								$("#secondChoice").get(0).selectedIndex = 1;
+								$("#thirdChoice").get(0).selectedIndex = 2;
+								$.post("IssueInfo",$("#firstChoice").serialize(),
+										function(data) {
+											//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+											document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.info;
+											document.getElementById("selectSuject").rows[2].cells[1].innerHTML = data.requirement;
+											document.getElementById("selectSuject").rows[3].cells[1].innerHTML = data.specialty;
+											document.getElementById("selectSuject").rows[4].cells[1].innerHTML = data.total;
+											document.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.teacher;
+								},"json");
+								$.post("IssueInfo",$("#secondChoice").serialize(),
+										function(data) {
+											//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+											document.getElementById("selectSuject").rows[1].cells[3].innerHTML = data.info;
+											document.getElementById("selectSuject").rows[2].cells[3].innerHTML = data.requirement;
+											document.getElementById("selectSuject").rows[3].cells[3].innerHTML = data.specialty;
+											document.getElementById("selectSuject").rows[4].cells[3].innerHTML = data.total;
+											document.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.teacher;
+								},"json");
+								$.post("IssueInfo",$("#thirdChoice").serialize(),
+										function(data) {
+											//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+											document.getElementById("selectSuject").rows[1].cells[5].innerHTML = data.info;
+											document.getElementById("selectSuject").rows[2].cells[5].innerHTML = data.requirement;
+											document.getElementById("selectSuject").rows[3].cells[5].innerHTML = data.specialty;
+											document.getElementById("selectSuject").rows[4].cells[5].innerHTML = data.total;
+											document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.teacher;
+								},"json");
 							});
 						</script>
 						<%-----------------%>
