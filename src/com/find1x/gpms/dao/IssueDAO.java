@@ -78,4 +78,19 @@ public class IssueDAO {
 			return false;
 		}
 	}
+	
+	public static String getIssueJson(String title){
+		try {
+			String json;
+			Issue issue=MongoDBUtil.getDatastore().find(Issue.class).filter("title", title).get();
+			json="{\"title\":\""+issue.getTitle()+"\","+"\"info\":\""+issue.getInfo()+"\","+"\"requirement\":\""+issue.getRequirement()+"\","
+					+"\"specialty\":\""+issue.getSpecialty()+"\","+"\"total\":\""+issue.getTotal()+"\","+"\"teacher\":\""
+					+TeacherDAO.getName(issue.getTeacher())+"\"}";
+			//json="{\"title\":\"adadfs\",\"info\":\"fdsdf\"}";
+			return json;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

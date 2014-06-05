@@ -3,6 +3,7 @@ package com.find1x.gpms.dao;
 import java.util.List;
 
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.Datastore;
 
 import com.find1x.gpms.pojos.Student;
 import com.find1x.gpms.pojos.User;
@@ -10,22 +11,22 @@ import com.find1x.gpms.util.MongoDBUtil;
 
 public class StudentDAO {
 	public static List<Student> getList() {
-		List<Student> list = MongoDBUtil.getDatastore()
-				.find(Student.class).asList();
+		List<Student> list = MongoDBUtil.getDatastore().find(Student.class)
+				.asList();
 		return list;
 	}
 
 	public static Student getStudentInfo(String no) {
-		Student student= MongoDBUtil.getDatastore()
-				.find(Student.class).filter("no", no).get();
+		Student student = MongoDBUtil.getDatastore().find(Student.class)
+				.filter("no", no).get();
 		return student;
 	}
-	
-	public static ObjectId addStudent(String no, String name,
-			String sex, String classno, String department,
-			String specialty,String telephone,String email) {
+
+	public static ObjectId addStudent(String no, String name, String sex,
+			String classno, String department, String specialty,
+			String telephone, String email) {
 		try {
-			Student student=new Student();
+			Student student = new Student();
 			student.setNo(no);
 			student.setName(name);
 			student.setSex(sex);
@@ -42,10 +43,10 @@ public class StudentDAO {
 			return null;
 		}
 	}
-	
-	public static boolean createUser(ObjectId _id,String username){
+
+	public static boolean createUser(ObjectId _id, String username) {
 		try {
-			User user=new User();
+			User user = new User();
 			user.setRefId(_id);
 			user.setUsername(username);
 			user.setType(0);
@@ -57,12 +58,30 @@ public class StudentDAO {
 			return false;
 		}
 	}
-	
-	public static boolean  existStudent(String no){
-		if(MongoDBUtil.getDatastore()
-				.find(Student.class).filter("no", no).get()==null)
+
+	public static boolean existStudent(String no) {
+		if (MongoDBUtil.getDatastore().find(Student.class).filter("no", no)
+				.get() == null)
 			return false;
 		else
 			return true;
+	}
+
+	public static boolean addSubject(String no, String firstChoice,
+			String secondChoice, String thirdChoice) {
+		try {
+			Datastore ds = MongoDBUtil.getDatastore();
+			ds.update(
+					ds.find(Student.class).filter("no", no),
+					ds.createUpdateOperations(Student.class)
+							.set("firstChoice", firstChoice)
+							.set("secondChoice", secondChoice)
+							.set("thirdChoice", thirdChoice));
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
 	}
 }

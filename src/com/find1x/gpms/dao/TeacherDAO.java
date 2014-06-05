@@ -73,4 +73,10 @@ public class TeacherDAO {
 		else
 			return true;
 	}
+	
+	public static String getName(String no){
+		return MongoDBUtil.getDatastore()
+				.find(Teacher.class).filter("no", no).get().getName();
+
+	}
 }

@@ -18,7 +18,28 @@ public class Student {
 	private String email;
 	private String teacher;
 	private String issue;
+	private String firstChoice;
+	private String secondChoice;
+	private String thirdChoice;
 	
+	public String getFirstChoice() {
+		return firstChoice;
+	}
+	public void setFirstChoice(String firstChoice) {
+		this.firstChoice = firstChoice;
+	}
+	public String getSecondChoice() {
+		return secondChoice;
+	}
+	public void setSecondChoice(String secondChoice) {
+		this.secondChoice = secondChoice;
+	}
+	public String getThirdChoice() {
+		return thirdChoice;
+	}
+	public void setThirdChoice(String thirdChoice) {
+		this.thirdChoice = thirdChoice;
+	}
 	public String getIssue() {
 		return issue;
 	}

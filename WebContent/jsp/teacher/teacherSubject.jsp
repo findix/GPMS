@@ -53,7 +53,7 @@
 						<option>信息安全</option>
 						<option>计算机科学与技术</option>
 						</select><br/><br/>
-						可选人数：<input type="text" name="issue.total"/>  <br/>
+						可选人数:<input type="text" name="issue.total"/>  <br/>
 						<div class="submit"><input type="submit" value="提交" />	</div>
 						</form>
 						<%-----------------%>
