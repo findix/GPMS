@@ -94,6 +94,10 @@ public class IssueDAO {
 		}
 	}
 	
+	public static Issue getIssueInfo(String title){
+			return MongoDBUtil.getDatastore().find(Issue.class).filter("title", title).get();
+	}
+	
 	public static String selectSubject(String title){
 		Datastore ds = MongoDBUtil.getDatastore();
 		Issue issue=ds.find(Issue.class).filter("title", title).get();

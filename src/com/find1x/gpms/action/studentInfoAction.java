@@ -6,7 +6,9 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.find1x.gpms.dao.IssueDAO;
 import com.find1x.gpms.dao.StudentDAO;
+import com.find1x.gpms.pojos.Issue;
 import com.find1x.gpms.pojos.Student;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -22,6 +24,7 @@ public class studentInfoAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 	private Student student;
+	private Issue issue;
 	
 	public Student getStudent() {
 		return student;
@@ -30,9 +33,18 @@ public class studentInfoAction extends ActionSupport {
 		this.student = student;
 	}
 	
+	public Issue getIssue() {
+		return issue;
+	}
+	public void setIssue(Issue issue) {
+		this.issue = issue;
+	}
+	
 	@Override
 	public String execute() throws Exception {
-		student=StudentDAO.getStudentInfo((String)session.getAttribute("username"));
+		String no=(String)session.getAttribute("username");
+		student=StudentDAO.getStudentInfo(no);
+		issue=IssueDAO.getIssueInfo(StudentDAO.hasIssue(no));
 		return SUCCESS;
 	}
 }

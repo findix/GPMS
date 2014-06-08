@@ -108,4 +108,13 @@ public class StudentDAO {
 			return false;
 		}
 	}
+	
+	public static String hasIssue(String no){
+		Student student=MongoDBUtil.getDatastore().find(Student.class).filter("no", no).get();
+		if(student.getIssue()!=null){
+			return student.getIssue();
+		}else{
+			return null;
+		}
+	}
 }

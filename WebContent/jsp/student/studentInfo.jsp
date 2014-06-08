@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -69,6 +70,23 @@
 								<td>${student.email}</td>
 							</tr>
 						</table>
+						<s:if test="#request.issue!=null">
+						<BR />
+						<table class="table table-bordered">
+							<tr>
+								<td>选题</td>
+								<td>${issue.title}</td>
+							</tr>
+							<tr>
+								<td>简介</td>
+								<td>${issue.info}</td>
+							</tr>
+							<tr>
+								<td>要求</td>
+								<td>${issue.requirement}</td>
+							</tr>
+						</table>
+						</s:if>
 						<%-----------------%>
 					</div>
 				</div>
