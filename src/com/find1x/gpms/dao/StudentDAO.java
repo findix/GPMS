@@ -90,17 +90,17 @@ public class StudentDAO {
 				ds.update(
 						ds.find(Student.class).filter("no", no),
 						ds.createUpdateOperations(Student.class)
-								.set("teacher", teacher));
+								.set("teacher", teacher).set("issue", firstChoice));
 			}else if((teacher=IssueDAO.selectSubject(secondChoice))!=null){
 				ds.update(
 						ds.find(Student.class).filter("no", no),
 						ds.createUpdateOperations(Student.class)
-								.set("teacher", teacher));
+								.set("teacher", teacher).set("issue", secondChoice));
 			}else if((teacher=IssueDAO.selectSubject(thirdChoice))!=null){
 				ds.update(
 						ds.find(Student.class).filter("no", no),
 						ds.createUpdateOperations(Student.class)
-								.set("teacher", teacher));
+								.set("teacher", teacher).set("issue", thirdChoice));
 			}
 			return true;
 		} catch (Exception e) {
