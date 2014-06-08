@@ -44,6 +44,7 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
+						<h4>自评学生</h4>
 						<table class="table table-bordered" style="text-align: center">
 							<tr>
 								<td width="150px">姓名</td>
@@ -64,6 +65,42 @@
 										onclick='studentGrade("${student.no}")'>成绩管理</button></td>
 							</tr>
 							</s:iterator>
+						</table>
+						<h4>互评学生</h4>
+						<table class="table table-bordered" style="text-align: center">
+							<tr>
+								<td width="150px">姓名</td>
+								<td width="150px">学号</td>
+								<td width="150px">专业</td>
+								<td width="200px">选题</td>
+								<td colspan="2" width="300px">其他</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
+						<h4>答辩学生</h4>
+						<table class="table table-bordered" style="text-align: center">
+							<tr>
+								<td width="150px">姓名</td>
+								<td width="150px">学号</td>
+								<td width="150px">专业</td>
+								<td width="200px">选题</td>
+								<td colspan="2" width="300px">其他</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
 						</table>
 						<script>
 							function studentInfo(no) {
