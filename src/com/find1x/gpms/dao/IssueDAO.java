@@ -53,13 +53,13 @@ public class IssueDAO {
 	}
 	
 	public static boolean changeIssue(String _id,String title, String info,
-			String requirement, String specialty, String total ,String teacher) {
+			String requirement, String specialty, String total) {
 		try {
 			Datastore ds = MongoDBUtil.getDatastore();
 			ds.update(ds.find(Issue.class).filter("_id", new ObjectId(_id)),
 					ds.createUpdateOperations(Issue.class)
 					.set("title", title).set("info", info).set("requirement", requirement)
-					.set("specialty", specialty).set("total", total).set("teacher", teacher));
+					.set("specialty", specialty).set("total", total));
 					
 			return true;
 		} catch (Exception e) {
