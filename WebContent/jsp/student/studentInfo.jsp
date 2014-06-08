@@ -71,21 +71,25 @@
 							</tr>
 						</table>
 						<s:if test="#request.issue!=null">
-						<BR />
-						<table class="table table-bordered">
-							<tr>
-								<td>选题</td>
-								<td>${issue.title}</td>
-							</tr>
-							<tr>
-								<td>简介</td>
-								<td>${issue.info}</td>
-							</tr>
-							<tr>
-								<td>要求</td>
-								<td>${issue.requirement}</td>
-							</tr>
-						</table>
+							<BR />
+							<table class="table table-bordered">
+								<tr>
+									<td>选题</td>
+									<td>${issue.title}</td>
+								</tr>
+								<tr>
+									<td>简介</td>
+									<td>${issue.info}</td>
+								</tr>
+								<tr>
+									<td>要求</td>
+									<td>${issue.requirement}</td>
+								</tr>
+								<tr>
+									<td>选题文档下载</td>
+									<td><a href="static/file/${issue.title}.doc">点击下载</a></td>
+								</tr>
+							</table>
 						</s:if>
 						<%-----------------%>
 					</div>

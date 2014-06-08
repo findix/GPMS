@@ -30,8 +30,8 @@
 <body>
 	<div id="wrap">
 		<div id="main" class="clearfix">
-			<%-- 此行控制是否该页面未登录无法访问 --%>  
-		<%@ include file="/jsp/authentication.jsp"%>
+			<%-- 此行控制是否该页面未登录无法访问 --%>
+			<%@ include file="/jsp/authentication.jsp"%>
 
 			<%-- header导航条--%>
 			<%@ include file="/jsp/nav.jsp"%>
@@ -43,12 +43,24 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<form>
-						题目名称:<input type="text" name="name"/><br/><br/>
-						文档说明:<textarea class="form-control" rows="3"></textarea><br/><br/>
-						选择文件:<input type="file"/><br/><br/>
-						<div class="submit"><input type="submit" value="提交"></input></div>
+						<form action="teacherUploadFiles" method="POST"
+							enctype="multipart/form-data">
+							题目名称:<input type="text" name="name" /><br /> <br /> 文档说明:
+							<textarea class="form-control" rows="3"></textarea>
+							<br /> <span class="btn btn-default btn-file"> <input
+								type="file" name="issueFile" />
+							</span> <input class="btn" type="submit" /> <br />
 						</form>
+						<br />
+						<%
+							if (request.getAttribute("message") != null) {
+						%>
+						<div class="alert alert-success">
+							<%=request.getAttribute("message")%>
+						</div>
+						<%
+							}
+						%>
 						<%-----------------%>
 					</div>
 				</div>
