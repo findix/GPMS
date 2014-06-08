@@ -43,7 +43,9 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-		
+						<h2 align="center">通知</h2>
+						<p><font face="华文新魏" size="3">你好</font></p>
+						<p><font face="华文新魏" size="3">2</font></p>
 						<%-----------------%>
 					</div>
 				</div>

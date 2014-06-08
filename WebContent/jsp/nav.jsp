@@ -19,23 +19,8 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="/gpms/">首页</a></li>
-				<%
-					if (session.getAttribute("username") != null) {
-				%>
-				<li><a href="myOrderList">查看论文</a></li>
-				<%
-					}
-				%>
-				<%
-					if (session.getAttribute("type") != null
-							&& Integer
-									.parseInt(session.getAttribute("type").toString()) > 0) {
-				%>
-				<li><a href="manage" id="admin">论文管理</a></li>
-
-				<%
-					}
-				%>
+			 
+		
 			</ul>
 			<%
 				if (session.getAttribute("username") != null) {

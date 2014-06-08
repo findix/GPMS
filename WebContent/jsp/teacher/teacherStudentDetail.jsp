@@ -70,6 +70,10 @@
 								<td>${student.email}</td>
 							</tr>	
 					</table>
+					<div class="submit">
+					<button type="button" class="btn btn-default"
+					onclick="window.location='teacherStudent'">返回</button>
+					</div>
 						<%-----------------%>
 					</div>
 				</div>
