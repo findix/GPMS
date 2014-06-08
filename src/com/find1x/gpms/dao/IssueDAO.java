@@ -42,6 +42,7 @@ public class IssueDAO {
 			issue.setRequirement(requirement);
 			issue.setSpecialty(specialty);
 			issue.setTotal(total);
+			issue.setRemain(Integer.valueOf(total));
 			issue.setTeacher(teacher);
 			Datastore ds = MongoDBUtil.getDatastore();
 			ds.save(issue);
@@ -92,5 +93,16 @@ public class IssueDAO {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public static String selectSubject(String title){
+		Datastore ds = MongoDBUtil.getDatastore();
+		Issue issue=ds.find(Issue.class).filter("title", title).get();
+		if(issue.getRemain()>0){
+			ds.update(issue, 
+					ds.createUpdateOperations(Issue.class).set("remain", issue.getRemain()-1));
+			return issue.getTeacher();
+		}
+		else return null;
 	}
 }

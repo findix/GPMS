@@ -13,6 +13,14 @@ public class Issue {
 	private String requirement;
 	private String specialty;
 	private String total;
+	private Integer remain;
+	
+	public Integer getRemain() {
+		return remain;
+	}
+	public void setRemain(Integer remain) {
+		this.remain = remain;
+	}
 	private String teacher;
 	//private String[] student;
 	

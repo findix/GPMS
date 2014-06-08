@@ -6,6 +6,7 @@ import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 
 import com.find1x.gpms.pojos.Student;
+import com.find1x.gpms.pojos.Teacher;
 import com.find1x.gpms.pojos.User;
 import com.find1x.gpms.util.MongoDBUtil;
 
@@ -21,7 +22,14 @@ public class StudentDAO {
 				.filter("no", no).get();
 		return student;
 	}
-
+	
+	public static Teacher getTeacherInfo(String no){
+		Student student = MongoDBUtil.getDatastore().find(Student.class)
+				.filter("no", no).get();
+		Teacher teacher=TeacherDAO.getTeacherInfo(student.getTeacher());
+		return teacher;
+	}
+	
 	public static ObjectId addStudent(String no, String name, String sex,
 			String classno, String department, String specialty,
 			String telephone, String email) {
@@ -70,6 +78,7 @@ public class StudentDAO {
 	public static boolean addSubject(String no, String firstChoice,
 			String secondChoice, String thirdChoice) {
 		try {
+			String teacher;
 			Datastore ds = MongoDBUtil.getDatastore();
 			ds.update(
 					ds.find(Student.class).filter("no", no),
@@ -77,6 +86,22 @@ public class StudentDAO {
 							.set("firstChoice", firstChoice)
 							.set("secondChoice", secondChoice)
 							.set("thirdChoice", thirdChoice));
+			if((teacher=IssueDAO.selectSubject(firstChoice))!=null){
+				ds.update(
+						ds.find(Student.class).filter("no", no),
+						ds.createUpdateOperations(Student.class)
+								.set("teacher", teacher));
+			}else if((teacher=IssueDAO.selectSubject(secondChoice))!=null){
+				ds.update(
+						ds.find(Student.class).filter("no", no),
+						ds.createUpdateOperations(Student.class)
+								.set("teacher", teacher));
+			}else if((teacher=IssueDAO.selectSubject(thirdChoice))!=null){
+				ds.update(
+						ds.find(Student.class).filter("no", no),
+						ds.createUpdateOperations(Student.class)
+								.set("teacher", teacher));
+			}
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

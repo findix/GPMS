@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page
+	import="com.find1x.gpms.dao.*,com.find1x.gpms.pojos.*,java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -43,12 +45,19 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
+						<%
+							Teacher teacher = StudentDAO.getTeacherInfo((String)session.getAttribute("username"));
+							if(teacher!=null){
+						%>
 					<table class="table table-bordered">
-						<tr><td>工号</td><td></td><td>姓名</td><td></td></tr>
-						<tr><td>学院</td><td></td><td>职务</td><td></td></tr>
-						<tr><td>性别</td><td></td><td>联系电话</td><td></td></tr>
-						<tr><td>邮箱</td><td colspan="3"></td></tr>
+						<tr><td>工号</td><td><%=teacher.getNo() %></td><td>姓名</td><td><%=teacher.getName() %></td></tr>
+						<tr><td>学院</td><td><%=teacher.getDepartment() %></td><td>职务</td><td><%=teacher.getPostion() %></td></tr>
+						<tr><td>性别</td><td><%=teacher.getSex() %></td><td>联系电话</td><td><%=teacher.getTelephone() %></td></tr>
+						<tr><td>邮箱</td><td colspan="3"><%=teacher.getEmail() %></td></tr>
 					</table>
+						<%
+							}
+						%>
 						<%-----------------%>
 					</div>
 				</div>
