@@ -70,7 +70,7 @@
 								window.location.href = ('teacherStudentDetail?no='
 										+ no + '');
 							}
-							function deleteSubject(no) {
+							function studentGrade(no) {
 								window.location.href = ('teacherStudentGrade?no='
 										+ no + '');
 							}
