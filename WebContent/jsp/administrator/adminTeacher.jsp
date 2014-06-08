@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page
+	import="com.find1x.gpms.dao.TeacherDAO,com.find1x.gpms.pojos.Teacher,java.util.List"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -69,17 +71,24 @@
 								<td>职务</td>
 								<td colspan="2">其他</td>
 							</tr>
+							<%
+								List<Teacher> list = TeacherDAO.getList();
+								for (Teacher t : list) {
+							%>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td><%=t.getNo()%></td>
+								<td><%=t.getName()%></td>
+								<td><%=t.getDepartment()%></td>
+								<td><%=t.getPostion()%></td>
+								<td><%=t.getSex()%></td>
+								<td><%=t.getTelephone()%></td>
+								<td><%=t.getEmail()%></td>
 								<td><button>删除记录</button></td>
 								<td><button>重置密码</button></td>
 							</tr>
+							<%
+								}
+							%>
 						</table>
 						<%-----------------%>
 					</div>

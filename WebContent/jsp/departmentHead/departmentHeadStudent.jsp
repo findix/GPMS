@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page
+<%@page
 	import="com.find1x.gpms.dao.StudentDAO,com.find1x.gpms.pojos.Student,java.util.List"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

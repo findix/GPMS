@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page
+	import="com.find1x.gpms.dao.StudentDAO,com.find1x.gpms.pojos.Student,java.util.List"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -70,18 +72,25 @@
 								<td>邮箱</td>
 								<td colspan="2">其他</td>
 							</tr>
+							<%
+								List<Student> list = StudentDAO.getList();
+								for (Student s : list) {
+							%>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td><%=s.getNo()%></td>
+								<td><%=s.getClassno()%></td>
+								<td><%=s.getName()%></td>
+								<td><%=s.getDepartment()%></td>
+								<td><%=s.getSpecialty()%></td>
+								<td><%=s.getSex()%></td>
+								<td><%=s.getTelephone()%></td>
+								<td><%=s.getEmail()%></td>
 								<td><button class="btn">删除记录</button></td>
 								<td><button class="btn">重置密码</button></td>
 							</tr>
+								<%
+									}
+								%>
 						</table>
 						<%-----------------%>
 					</div>
