@@ -67,5 +67,10 @@
 				adminTeacher
 			</result>
 		</action>
+		<action name="ReleaseNotice" class="com.find1x.gpms.action.ReleaseNoticeAction">
+			<result type="redirect">
+				admin
+			</result>
+		</action>
 	</package>
 </struts>

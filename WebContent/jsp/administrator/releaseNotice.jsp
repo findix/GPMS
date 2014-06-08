@@ -43,15 +43,18 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						编辑通知： <br/>
-						<TEXTAREA  class="form-control" rows="15"></TEXTAREA><br/>
-						发布到：<br/>
-						<input type="checkbox" name="status"/>教务员 &nbsp;&nbsp;&nbsp;
-						<input type="checkbox" name="status"/>系主任&nbsp;&nbsp;&nbsp;
-						<input type="checkbox" name="status"/>教师&nbsp;&nbsp;&nbsp;
-						<input type="checkbox" name="status"/>学生<br/><br/>
-						<div class="submit"><button type="button" class="btn btn-warning">发布</button></div>
-						
+						<form action="ReleaseNotice" method="post">
+							编辑通知： <br />
+							<TEXTAREA name="notice" class="form-control" rows="15"></TEXTAREA>
+							<br /> 发布到：<br /> <input type="checkbox" name="admin" value="admin"/>教务员
+							&nbsp;&nbsp;&nbsp; <input type="checkbox" name="dhead" value="dhead"/>系主任&nbsp;&nbsp;&nbsp;
+							<input type="checkbox" name="teacher" value="teacher"/>教师&nbsp;&nbsp;&nbsp; <input
+								type="checkbox" name="student" value="student"/>学生<br />
+							<br />
+							<div class="submit">
+								<input type="submit" value="发布" class="btn btn-warning" />
+							</div>
+						</form>
 						<%-----------------%>
 					</div>
 				</div>

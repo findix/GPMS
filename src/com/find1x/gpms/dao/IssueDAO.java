@@ -44,8 +44,7 @@ public class IssueDAO {
 			issue.setTotal(total);
 			issue.setRemain(Integer.valueOf(total));
 			issue.setTeacher(teacher);
-			Datastore ds = MongoDBUtil.getDatastore();
-			ds.save(issue);
+			MongoDBUtil.getDatastore().save(issue);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
