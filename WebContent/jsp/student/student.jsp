@@ -45,12 +45,12 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<h2 align="center">通知</h2>
+						<h2><font color="red">通知</font></h2>
 						<%
 							List<Notice> notices=NoticeDAO.getNotice((String)session.getAttribute("type").toString());
 							for(Notice n:notices){
 						%>
-						<p><font face="华文新魏" size="3"><%=n.getContext() %></font></p>
+						<p><font face="华文新魏" size="4"><%=n.getContext() %></font></p>
 						<%
 							}
 						%>
