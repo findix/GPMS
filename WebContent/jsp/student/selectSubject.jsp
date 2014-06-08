@@ -53,7 +53,7 @@
 						<form action="SelectIssue" id="SelectIssue" method="post">
 							<table id="selectSuject" class="table table-bordered">
 								<tr>
-									<th>第一志愿</th>
+									<th width="100px">第一志愿</th>
 									<th><select id="firstChoice" name="firstChoice">
 											<%
 												for (Issue i : list) {
@@ -63,7 +63,7 @@
 												}
 											%>
 									</select></th>
-									<th>第二志愿</th>
+									<th width="100px">第二志愿</th>
 									<th><select id="secondChoice" name="secondChoice">
 											<%
 												for (Issue i : list) {
@@ -73,7 +73,7 @@
 												}
 											%>
 									</select></th>
-									<th>第三志愿</th>
+									<th width="100px">第三志愿</th>
 									<th><select id="thirdChoice" name="thirdChoice">
 											<%
 												for (Issue i : list) {

@@ -44,13 +44,13 @@
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
 					<table class="table table-bordered table-striped">
-					<tr><td>初评成绩</td><td></td></tr>
-					<tr><td>初评意见</td><td></td></tr>
-					<tr><td>评阅成绩</td><td></td></tr>
-					<tr><td>评阅意见</td><td></td></tr>
-					<tr><td>答辩成绩</td><td></td></tr>
-					<tr><td>答辩意见</td><td></td></tr>
-					<tr><td>总成绩</td><td></td></tr>
+					<tr><td width="200px" align="center">初评成绩</td><td></td></tr>
+					<tr><td  width="200px" align="center">初评意见</td><td></td></tr>
+					<tr><td  width="200px" align="center">评阅成绩</td><td></td></tr>
+					<tr><td  width="200px" align="center">评阅意见</td><td></td></tr>
+					<tr><td  width="200px" align="center">答辩成绩</td><td></td></tr>
+					<tr><td  width="200px" align="center">答辩意见</td><td></td></tr>
+					<tr><td  width="200px" align="center">总成绩</td><td></td></tr>
 					</table>
 						<%-----------------%>
 					</div>

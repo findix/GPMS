@@ -55,6 +55,7 @@
 								<th>性别</th>
 								<th>联系电话</th>
 								<th>邮箱</th>
+								<th>成绩</th>
 							</tr>
 							<%
 								List<Student> list = StudentDAO.getList();

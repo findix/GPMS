@@ -43,11 +43,30 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-					<table class="table table-bordered">
-					<tr align="center"><td>姓名</td><td>学号</td><td>专业</td><td colspan="2">其他</td></tr>
-					<tr><td></td><td></td><td></td><td><button type="button" class="btn btn-primary" onclick="window.location='teacherStudentDetail'">详细信息</button></td><td><button type="button" class="btn btn-primary" onclick="window.location='teacherStudentGrade'">成绩管理</button></td></tr>
-					<tr><td></td><td></td><td></td><td></td><td></td></tr>
-					</table>
+						<table class="table table-bordered" style="text-align: center">
+							<tr>
+								<td width="150px">姓名</td>
+								<td width="150px">学号</td>
+								<td width="150px">专业</td>
+								<td colspan="2" width="300px">其他</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td width="150px"><button type="button" class="btn btn-primary"
+										onclick="window.location='teacherStudentDetail'">详细信息</button></td>
+								<td width="150px"><button type="button" class="btn btn-primary"
+										onclick="window.location='teacherStudentGrade'">成绩管理</button></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</table>
 						<%-----------------%>
 					</div>
 				</div>

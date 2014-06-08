@@ -54,6 +54,7 @@
 								<th>性别</th>
 								<th>联系电话</th>
 								<th>邮箱</th>
+								<th>其他</th>
 							</tr>
 							<%
 								List<Teacher> list = TeacherDAO.getList();

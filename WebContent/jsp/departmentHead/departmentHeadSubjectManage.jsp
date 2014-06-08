@@ -44,7 +44,7 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<table class="table table-bordered">
+						<table class="table table-bordered" style="text-align: center">
 							<tr>
 								<td>题目名称</td>
 								<td>题目简介</td>

@@ -44,21 +44,21 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-						<table class="table table-bordered">
+						<table class="table table-bordered" style="text-align: center">
 							<tr>
-								<td>题目名称</td>
+								<td width="200px">题目名称</td>
 								<td>题目简介</td>
-								<td>面向专业</td>
-								<td colspan="2">其他</td>
+								<td width="150px">面向专业</td>
+								<td colspan="2" width="200px">其他</td>
 							</tr>
 							<s:iterator value="#request.issues" var="subject">
 								<tr>
 									<td>${subject.title}</td>
 									<td>${subject.info}</td>
 									<td>${subject.specialty}</td>
-									<td><button type="button" class="btn btn-success"
+									<td width="100px"><button type="button" class="btn btn-success"
 											onclick='changeSubject("${subject._id}")'>修改</button></td>
-									<td><button type="button" class="btn btn-danger"
+									<td width="100px"><button type="button" class="btn btn-danger"
 											onclick='deleteSubject("${subject._id}")'>删除</button></td>
 								</tr>
 							</s:iterator>
