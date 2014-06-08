@@ -16,9 +16,9 @@ public class TeacherDAO {
 		return list;
 	}
 	
-	public static List<Teacher> getStudents(String teacher) {
-		List<Teacher> list = MongoDBUtil.getDatastore()
-				.find(Teacher.class).filter("teacher", teacher).asList();
+	public static List<Student> getStudents(String teacher) {
+		List<Student> list = MongoDBUtil.getDatastore()
+				.find(Student.class).filter("teacher", teacher).asList();
 		return list;
 	}
 

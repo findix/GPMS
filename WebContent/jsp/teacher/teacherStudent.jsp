@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -48,25 +49,32 @@
 								<td width="150px">姓名</td>
 								<td width="150px">学号</td>
 								<td width="150px">专业</td>
+								<td width="200px">选题</td>
 								<td colspan="2" width="300px">其他</td>
 							</tr>
+							<s:iterator value="#request.students" var="student">
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>${student.name}</td>
+								<td>${student.no}</td>
+								<td>${student.specialty}</td>
+								<td>${student.issue}</td>
 								<td width="150px"><button type="button" class="btn btn-primary"
-										onclick="window.location='teacherStudentDetail'">详细信息</button></td>
+										onclick='studentInfo("${student.no}")'>详细信息</button></td>
 								<td width="150px"><button type="button" class="btn btn-primary"
-										onclick="window.location='teacherStudentGrade'">成绩管理</button></td>
+										onclick='studentGrade("${student.no}")'>成绩管理</button></td>
 							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
+							</s:iterator>
 						</table>
+						<script>
+							function studentInfo(no) {
+								window.location.href = ('teacherStudentDetail?no='
+										+ no + '');
+							}
+							function deleteSubject(no) {
+								window.location.href = ('teacherStudentGrade?no='
+										+ no + '');
+							}
+						</script>
 						<%-----------------%>
 					</div>
 				</div>
