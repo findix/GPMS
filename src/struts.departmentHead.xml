@@ -72,6 +72,12 @@
 			</result>
 		</action>
 
+		<action name="studentGradeManage">
+			<result>
+				jsp/departmentHead/studentGradeManage.jsp
+			</result>
+		</action>
+
 		<!-- actions -->
 		<action name="DepartmentHeadStudentGrade"
 			class="com.find1x.gpms.action.DepartmentHeadStudentGradeAction">
