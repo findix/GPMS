@@ -71,7 +71,7 @@
 								<td><%=t.getTelephone()%></td>
 								<td><%=t.getEmail()%></td>
 								<td><button type="button" class="btn btn-primary"
-										onclick="window.location='departmentHeadGroup'">分组管理</button></td>
+										onclick="window.location='departmentHeadGroup?no=<%=t.getNo()%>'">分组管理</button></td>
 							<tr>
 								<%
 									}

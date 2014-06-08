@@ -37,7 +37,6 @@ public class teacherUploadFilesAction extends ActionSupport {
 		if (issueFile != null) {
 			File savefile = new File(new File(realpath + "\\static\\file"),
 					name+".doc");
-			System.out.println(savefile.getAbsolutePath());
 			if (!savefile.getParentFile().exists())
 				savefile.getParentFile().mkdirs();
 			FileUtils.copyFile(issueFile, savefile);

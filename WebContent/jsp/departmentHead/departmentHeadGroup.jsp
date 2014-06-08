@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page
+	import="com.find1x.gpms.pojos.Teacher,com.find1x.gpms.dao.TeacherDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,6 +16,7 @@
 	// stylesheet
 %>
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap-switch.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet" media="screen">
 <%
 	// icon
@@ -43,11 +46,30 @@
 						<%@ include file="side.jsp"%></div>
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
-					<table class="table table-bordered">
-					<tr align="center"><td>导师</td><td>所带学生</td><td></td></tr>
-					<tr><td></td><td></td><td></td></tr>
-					<tr><td></td><td></td><td></td></tr>
-					</table>
+						<%
+							Teacher teacher = TeacherDAO.getTeacherInfo(request
+									.getParameter("no"));
+						%>
+						<form action="DepartmentHeadGroup" method="post">
+							<table class="table table-bordered">
+								<tr>
+									<th>导师</th>
+									<th>所在小组</th>
+									<th>是否组长</th>
+								</tr>
+								<tr>
+									<td><input type="hidden" name="teacher.no"
+										value="<%=teacher.getNo()%>" /><%=teacher.getName()%></td>
+									<td><input id="group" name="teacher.group" type="text"
+										value="<%=teacher.getGroup() == null ? "" : teacher.getGroup()%>" /></td>
+									<td><input data-on-color="success" data-off-color="danger"
+										data-on-text="是" data-off-text="否" type="checkbox"
+										name="isLeader" value="true" /></td>
+									<td align="center"><input class="btn btn-normal"
+										value="修改" type="submit" /></td>
+								</tr>
+							</table>
+						</form>
 						<%-----------------%>
 					</div>
 				</div>
@@ -59,5 +81,10 @@
 	<%--js脚本 --%>
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-switch.min.js"></script>
+	<script>
+		$("[type='checkbox']").bootstrapSwitch();
+		$("[name='isLeader']").bootstrapSwitch('state',<%=teacher.isLeader()%>);
+	</script>
 </body>
 </html>

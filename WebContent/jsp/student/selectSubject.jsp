@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<%@page import="com.find1x.gpms.dao.SysControlDAO"%>
 <%@page
 	import="com.find1x.gpms.dao.IssueDAO,com.find1x.gpms.pojos.Issue,java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -49,6 +50,15 @@
 						<%-- 在注释之间添加代码 --%>
 						<%
 							List<Issue> list = IssueDAO.getList();
+											if(!SysControlDAO.GetSysControl().isS3() && !SysControlDAO.GetSysControl().isS5()){
+						%>
+						<script>
+							alert("选题暂未开放");
+							location.replace("index");
+						</script>
+						<%
+							//response.sendRedirect("index");
+							}
 						%>
 						<form action="SelectIssue" id="SelectIssue" method="post">
 							<table id="selectSuject" class="table table-bordered">
@@ -139,95 +149,194 @@
 						</form>
 						<script type="text/javascript">
 							$(function() {
-								$("#firstChoice").change(function() {
-									//$("#firstChoice").value()
-									$.post("IssueInfo",$("#firstChoice").serialize(),
-											function(data) {
-												//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
-												document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.info;
-												document.getElementById("selectSuject").rows[2].cells[1].innerHTML = data.requirement;
-												document.getElementById("selectSuject").rows[3].cells[1].innerHTML = data.specialty;
-												document.getElementById("selectSuject").rows[4].cells[1].innerHTML = data.total;
-												document.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.remain;
-												document.getElementById("selectSuject").rows[6].cells[1].innerHTML = data.teacher;
-									},"json");
-								});
+								$("#firstChoice")
+										.change(
+												function() {
+													//$("#firstChoice").value()
+													$
+															.post(
+																	"IssueInfo",
+																	$(
+																			"#firstChoice")
+																			.serialize(),
+																	function(
+																			data) {
+																		//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+																		document
+																				.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.info;
+																		document
+																				.getElementById("selectSuject").rows[2].cells[1].innerHTML = data.requirement;
+																		document
+																				.getElementById("selectSuject").rows[3].cells[1].innerHTML = data.specialty;
+																		document
+																				.getElementById("selectSuject").rows[4].cells[1].innerHTML = data.total;
+																		document
+																				.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.remain;
+																		document
+																				.getElementById("selectSuject").rows[6].cells[1].innerHTML = data.teacher;
+																	}, "json");
+												});
 							});
 							$(function() {
-								$("#secondChoice").change(function() {
-									//$("#firstChoice").value()
-									$.post("IssueInfo",$("#secondChoice").serialize(),
-											function(data) {
-												//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
-												document.getElementById("selectSuject").rows[1].cells[3].innerHTML = data.info;
-												document.getElementById("selectSuject").rows[2].cells[3].innerHTML = data.requirement;
-												document.getElementById("selectSuject").rows[3].cells[3].innerHTML = data.specialty;
-												document.getElementById("selectSuject").rows[4].cells[3].innerHTML = data.total;
-												document.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.remain;
-												document.getElementById("selectSuject").rows[6].cells[3].innerHTML = data.teacher;
-									},"json");
-								});
+								$("#secondChoice")
+										.change(
+												function() {
+													//$("#firstChoice").value()
+													$
+															.post(
+																	"IssueInfo",
+																	$(
+																			"#secondChoice")
+																			.serialize(),
+																	function(
+																			data) {
+																		//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+																		document
+																				.getElementById("selectSuject").rows[1].cells[3].innerHTML = data.info;
+																		document
+																				.getElementById("selectSuject").rows[2].cells[3].innerHTML = data.requirement;
+																		document
+																				.getElementById("selectSuject").rows[3].cells[3].innerHTML = data.specialty;
+																		document
+																				.getElementById("selectSuject").rows[4].cells[3].innerHTML = data.total;
+																		document
+																				.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.remain;
+																		document
+																				.getElementById("selectSuject").rows[6].cells[3].innerHTML = data.teacher;
+																	}, "json");
+												});
 							});
 							$(function() {
-								$("#thirdChoice").change(function() {
-									//$("#firstChoice").value()
-									$.post("IssueInfo",$("#thirdChoice").serialize(),
-											function(data) {
-												//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
-												document.getElementById("selectSuject").rows[1].cells[5].innerHTML = data.info;
-												document.getElementById("selectSuject").rows[2].cells[5].innerHTML = data.requirement;
-												document.getElementById("selectSuject").rows[3].cells[5].innerHTML = data.specialty;
-												document.getElementById("selectSuject").rows[4].cells[5].innerHTML = data.total;
-												document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.remain;
-												document.getElementById("selectSuject").rows[6].cells[5].innerHTML = data.teacher;
-									},"json");
-								});
+								$("#thirdChoice")
+										.change(
+												function() {
+													//$("#firstChoice").value()
+													$
+															.post(
+																	"IssueInfo",
+																	$(
+																			"#thirdChoice")
+																			.serialize(),
+																	function(
+																			data) {
+																		//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+																		document
+																				.getElementById("selectSuject").rows[1].cells[5].innerHTML = data.info;
+																		document
+																				.getElementById("selectSuject").rows[2].cells[5].innerHTML = data.requirement;
+																		document
+																				.getElementById("selectSuject").rows[3].cells[5].innerHTML = data.specialty;
+																		document
+																				.getElementById("selectSuject").rows[4].cells[5].innerHTML = data.total;
+																		document
+																				.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.remain;
+																		document
+																				.getElementById("selectSuject").rows[6].cells[5].innerHTML = data.teacher;
+																	}, "json");
+												});
 							});
-							$(document).ready(function(){
-								$("#firstChoice").get(0).selectedIndex = 0;
-								$("#secondChoice").get(0).selectedIndex = 1;
-								$("#thirdChoice").get(0).selectedIndex = 2;
-								$.post("IssueInfo",$("#firstChoice").serialize(),
-										function(data) {
-											//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
-											document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.info;
-											document.getElementById("selectSuject").rows[2].cells[1].innerHTML = data.requirement;
-											document.getElementById("selectSuject").rows[3].cells[1].innerHTML = data.specialty;
-											document.getElementById("selectSuject").rows[4].cells[1].innerHTML = data.total;
-											document.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.remain;
-											document.getElementById("selectSuject").rows[6].cells[1].innerHTML = data.teacher;
-								},"json");
-								$.post("IssueInfo",$("#secondChoice").serialize(),
-										function(data) {
-											//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
-											document.getElementById("selectSuject").rows[1].cells[3].innerHTML = data.info;
-											document.getElementById("selectSuject").rows[2].cells[3].innerHTML = data.requirement;
-											document.getElementById("selectSuject").rows[3].cells[3].innerHTML = data.specialty;
-											document.getElementById("selectSuject").rows[4].cells[3].innerHTML = data.total;
-											document.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.remain;
-											document.getElementById("selectSuject").rows[6].cells[3].innerHTML = data.teacher;
-								},"json");
-								$.post("IssueInfo",$("#thirdChoice").serialize(),
-										function(data) {
-											//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
-											document.getElementById("selectSuject").rows[1].cells[5].innerHTML = data.info;
-											document.getElementById("selectSuject").rows[2].cells[5].innerHTML = data.requirement;
-											document.getElementById("selectSuject").rows[3].cells[5].innerHTML = data.specialty;
-											document.getElementById("selectSuject").rows[4].cells[5].innerHTML = data.total;
-											document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.remain;
-											document.getElementById("selectSuject").rows[6].cells[5].innerHTML = data.teacher;
-								},"json");
-							});
-							$(document).ready(function() {
-								$("#SelectIssue").submit(function(){
-									if($("#firstChoice").get(0).selectedIndex==$("#secondChoice").get(0).selectedIndex ||
-											$("#firstChoice").get(0).selectedIndex==$("#thirdChoice").get(0).selectedIndex ||
-											$("#thirdChoice").get(0).selectedIndex==$("#secondChoice").get(0).selectedIndex){
-										alert("选题不能重复");
-										return false;
-									}
-								});
-							});
+							$(document)
+									.ready(
+											function() {
+												$("#firstChoice").get(0).selectedIndex = 0;
+												$("#secondChoice").get(0).selectedIndex = 1;
+												$("#thirdChoice").get(0).selectedIndex = 2;
+												$
+														.post(
+																"IssueInfo",
+																$(
+																		"#firstChoice")
+																		.serialize(),
+																function(data) {
+																	//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+																	document
+																			.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.info;
+																	document
+																			.getElementById("selectSuject").rows[2].cells[1].innerHTML = data.requirement;
+																	document
+																			.getElementById("selectSuject").rows[3].cells[1].innerHTML = data.specialty;
+																	document
+																			.getElementById("selectSuject").rows[4].cells[1].innerHTML = data.total;
+																	document
+																			.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.remain;
+																	document
+																			.getElementById("selectSuject").rows[6].cells[1].innerHTML = data.teacher;
+																}, "json");
+												$
+														.post(
+																"IssueInfo",
+																$(
+																		"#secondChoice")
+																		.serialize(),
+																function(data) {
+																	//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+																	document
+																			.getElementById("selectSuject").rows[1].cells[3].innerHTML = data.info;
+																	document
+																			.getElementById("selectSuject").rows[2].cells[3].innerHTML = data.requirement;
+																	document
+																			.getElementById("selectSuject").rows[3].cells[3].innerHTML = data.specialty;
+																	document
+																			.getElementById("selectSuject").rows[4].cells[3].innerHTML = data.total;
+																	document
+																			.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.remain;
+																	document
+																			.getElementById("selectSuject").rows[6].cells[3].innerHTML = data.teacher;
+																}, "json");
+												$
+														.post(
+																"IssueInfo",
+																$(
+																		"#thirdChoice")
+																		.serialize(),
+																function(data) {
+																	//document.getElementById("selectSuject").rows[1].cells[1].innerHTML = data.title;
+																	document
+																			.getElementById("selectSuject").rows[1].cells[5].innerHTML = data.info;
+																	document
+																			.getElementById("selectSuject").rows[2].cells[5].innerHTML = data.requirement;
+																	document
+																			.getElementById("selectSuject").rows[3].cells[5].innerHTML = data.specialty;
+																	document
+																			.getElementById("selectSuject").rows[4].cells[5].innerHTML = data.total;
+																	document
+																			.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.remain;
+																	document
+																			.getElementById("selectSuject").rows[6].cells[5].innerHTML = data.teacher;
+																}, "json");
+											});
+							$(document)
+									.ready(
+											function() {
+												$("#SelectIssue")
+														.submit(
+																function() {
+																	if ($(
+																			"#firstChoice")
+																			.get(
+																					0).selectedIndex == $(
+																			"#secondChoice")
+																			.get(
+																					0).selectedIndex
+																			|| $(
+																					"#firstChoice")
+																					.get(
+																							0).selectedIndex == $(
+																					"#thirdChoice")
+																					.get(
+																							0).selectedIndex
+																			|| $(
+																					"#thirdChoice")
+																					.get(
+																							0).selectedIndex == $(
+																					"#secondChoice")
+																					.get(
+																							0).selectedIndex) {
+																		alert("选题不能重复");
+																		return false;
+																	}
+																});
+											});
 						</script>
 						<%-----------------%>
 					</div>

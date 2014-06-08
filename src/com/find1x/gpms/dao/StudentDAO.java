@@ -12,7 +12,7 @@ import com.find1x.gpms.util.MongoDBUtil;
 
 public class StudentDAO {
 	public static List<Student> getList() {
-		List<Student> list = MongoDBUtil.getDatastore().find(Student.class)
+		List<Student> list = MongoDBUtil.getDatastore().find(Student.class).order("no")
 				.asList();
 		return list;
 	}
