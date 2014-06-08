@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page
+	import="com.find1x.gpms.dao.NoticeDAO,com.find1x.gpms.pojos.Notice,java.util.List"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -44,8 +46,14 @@
 					<div class="col-md-9" id="content">
 						<%-- 在注释之间添加代码 --%>
 						<h2 align="center">通知</h2>
-						<p><font face="华文新魏" size="3">你好</font></p>
-						<p><font face="华文新魏" size="3">2</font></p>
+						<%
+							List<Notice> notices=NoticeDAO.getNotice((String)session.getAttribute("type").toString());
+							for(Notice n:notices){
+						%>
+						<p><font face="华文新魏" size="3"><%=n.getContext() %></font></p>
+						<%
+							}
+						%>
 						<%-----------------%>
 					</div>
 				</div>
