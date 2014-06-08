@@ -58,19 +58,19 @@
 								<a href="static/student_info.xls">点击下载学生信息模板</a>
 							</p>
 						</div>
-						<button class="btn" style="float: right"
+						<button class="btn btn-default" style="float: right"
 							onclick="window.location='addStudent'">增加记录</button>
-						<table class="table table-bordered" style="text-align: center">
+						<table class="table table-bordered" style="text-align: center" >
 							<tr>
 								<td>学号</td>
-								<td>姓名</td>
+								<td  width="50">姓名</td>
 								<td>性别</td>
 								<td>班级</td>
 								<td>学院</td>
-								<td>专业</td>
+								<td width="50">专业</td>
 								<td>电话</td>
 								<td>邮箱</td>
-								<td colspan="2">其他</td>
+								<td colspan="2">其他</td>								
 							</tr>
 							<%
 								List<Student> list = StudentDAO.getList();
@@ -78,15 +78,15 @@
 							%>
 							<tr>
 								<td><%=s.getNo()%></td>
-								<td><%=s.getClassno()%></td>
 								<td><%=s.getName()%></td>
-								<td><%=s.getDepartment()%></td>
-								<td><%=s.getSpecialty()%></td>
 								<td><%=s.getSex()%></td>
+								<td><%=s.getClassno()%></td>								
+								<td><%=s.getDepartment()%></td>
+								<td><%=s.getSpecialty()%></td>								
 								<td><%=s.getTelephone()%></td>
 								<td><%=s.getEmail()%></td>
-								<td><button class="btn">删除记录</button></td>
-								<td><button class="btn">重置密码</button></td>
+								<td><button type="button" class="btn btn-default">删除记录</button></td>
+								<td><button type="button" class="btn btn-default">重置密码</button></td>
 							</tr>
 								<%
 									}

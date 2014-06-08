@@ -58,13 +58,13 @@
 								<a href="static/teacher_info.xls">点击下载教师信息模板</a>
 							</p>
 						</div>
-						<button style="float: right"
+						<button  class="btn btn-default" style="float: right"
 							onclick="window.location='addTeacher'">增加记录</button>
 						<table class="table table-bordered" style="text-align: center">
 							<tr>
 								<td>工号</td>
 								<td>姓名</td>
-								<td>性别</td>
+								<td  width="50">性别</td>
 								<td>学院</td>
 								<td>电话</td>
 								<td>邮箱</td>
@@ -78,13 +78,13 @@
 							<tr>
 								<td><%=t.getNo()%></td>
 								<td><%=t.getName()%></td>
-								<td><%=t.getDepartment()%></td>
-								<td><%=t.getPostion()%></td>
 								<td><%=t.getSex()%></td>
+								<td><%=t.getDepartment()%></td>
 								<td><%=t.getTelephone()%></td>
 								<td><%=t.getEmail()%></td>
-								<td><button>删除记录</button></td>
-								<td><button>重置密码</button></td>
+								<td><%=t.getPostion()%></td>
+								<td><button type="button" class="btn btn-default">删除记录</button></td>
+								<td><button type="button" class="btn btn-default">重置密码</button></td>
 							</tr>
 							<%
 								}
