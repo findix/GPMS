@@ -117,6 +117,14 @@
 									<td></td>
 								</tr>
 								<tr>
+									<td>可选人数：</td>
+									<td></td>
+									<td>可选人数：</td>
+									<td></td>
+									<td>可选人数：</td>
+									<td></td>
+								</tr>
+								<tr>
 									<td>指导老师：</td>
 									<td></td>
 									<td>指导老师：</td>
@@ -140,7 +148,8 @@
 												document.getElementById("selectSuject").rows[2].cells[1].innerHTML = data.requirement;
 												document.getElementById("selectSuject").rows[3].cells[1].innerHTML = data.specialty;
 												document.getElementById("selectSuject").rows[4].cells[1].innerHTML = data.total;
-												document.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.teacher;
+												document.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.remain;
+												document.getElementById("selectSuject").rows[6].cells[1].innerHTML = data.teacher;
 									},"json");
 								});
 							});
@@ -154,7 +163,8 @@
 												document.getElementById("selectSuject").rows[2].cells[3].innerHTML = data.requirement;
 												document.getElementById("selectSuject").rows[3].cells[3].innerHTML = data.specialty;
 												document.getElementById("selectSuject").rows[4].cells[3].innerHTML = data.total;
-												document.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.teacher;
+												document.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.remain;
+												document.getElementById("selectSuject").rows[6].cells[3].innerHTML = data.teacher;
 									},"json");
 								});
 							});
@@ -168,7 +178,8 @@
 												document.getElementById("selectSuject").rows[2].cells[5].innerHTML = data.requirement;
 												document.getElementById("selectSuject").rows[3].cells[5].innerHTML = data.specialty;
 												document.getElementById("selectSuject").rows[4].cells[5].innerHTML = data.total;
-												document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.teacher;
+												document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.remain;
+												document.getElementById("selectSuject").rows[6].cells[5].innerHTML = data.teacher;
 									},"json");
 								});
 							});
@@ -183,7 +194,8 @@
 											document.getElementById("selectSuject").rows[2].cells[1].innerHTML = data.requirement;
 											document.getElementById("selectSuject").rows[3].cells[1].innerHTML = data.specialty;
 											document.getElementById("selectSuject").rows[4].cells[1].innerHTML = data.total;
-											document.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.teacher;
+											document.getElementById("selectSuject").rows[5].cells[1].innerHTML = data.remain;
+											document.getElementById("selectSuject").rows[6].cells[1].innerHTML = data.teacher;
 								},"json");
 								$.post("IssueInfo",$("#secondChoice").serialize(),
 										function(data) {
@@ -192,7 +204,8 @@
 											document.getElementById("selectSuject").rows[2].cells[3].innerHTML = data.requirement;
 											document.getElementById("selectSuject").rows[3].cells[3].innerHTML = data.specialty;
 											document.getElementById("selectSuject").rows[4].cells[3].innerHTML = data.total;
-											document.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.teacher;
+											document.getElementById("selectSuject").rows[5].cells[3].innerHTML = data.remain;
+											document.getElementById("selectSuject").rows[6].cells[3].innerHTML = data.teacher;
 								},"json");
 								$.post("IssueInfo",$("#thirdChoice").serialize(),
 										function(data) {
@@ -201,7 +214,8 @@
 											document.getElementById("selectSuject").rows[2].cells[5].innerHTML = data.requirement;
 											document.getElementById("selectSuject").rows[3].cells[5].innerHTML = data.specialty;
 											document.getElementById("selectSuject").rows[4].cells[5].innerHTML = data.total;
-											document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.teacher;
+											document.getElementById("selectSuject").rows[5].cells[5].innerHTML = data.remain;
+											document.getElementById("selectSuject").rows[6].cells[5].innerHTML = data.teacher;
 								},"json");
 							});
 							$(document).ready(function() {
