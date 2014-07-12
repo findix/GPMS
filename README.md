@@ -1,7 +1,7 @@
 # 毕业设计管理系统
-# Graduation Project Management System
+### Graduation Project Management System
 
-一个用于Java EE联系的未完善项目
+一个Java EE的练习项目（未完善）
 
 ## 功能需求
 毕业设计管理系统包括出题管理、选题管理、评分管理、教师分组管理等。根据系统需要，各个子系统的功能相互独立又相互关联，以下为毕业设计管理系统的工作基本流程：
